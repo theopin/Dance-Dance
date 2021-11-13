@@ -1,0 +1,7 @@
+evaluation_logs
+__pycache__
+.env
+converter.bit
+converter.hwh
+sds_trace_data.dat
+ultra96_fpga_test.py
