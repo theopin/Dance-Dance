@@ -1,0 +1,23 @@
+{
+  "name": "mqtt-broker",
+  "version": "1.0.0",
+  "description": "A broker to facilitate MQTT connections",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theopin/mqtt-broker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theopin/mqtt-broker/issues"
+  },
+  "homepage": "https://github.com/theopin/mqtt-broker#readme",
+  "dependencies": {
+    "aedes": "^0.46.1"
+  }
+}
