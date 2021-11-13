@@ -1,0 +1,27 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Nov 10 22:51:55 2021
+| Host         : steve running 64-bit Ubuntu 18.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xczu3eg-sbva484-1-i
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_mlp_sigmoid_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_mlp_sigmoid_0_0 (xilinx.com:hls:mlp_sigmoid:1.0) from (Rev. 2111102209) to (Rev. 2111102245)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_mlp_sigmoid_0_0'. These changes may impact your design.
+
+
+-Upgraded port order differs after port 'S_AXIS_TLAST'
+
+

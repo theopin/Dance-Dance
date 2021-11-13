@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="mlp_sigmoid.cpp" path="/home/steve/Desktop/capstone/test_vivado/pynq_training/mlp_sigmoid.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="mlp_sigmoid_tb.cpp" path="/home/steve/Desktop/capstone/test_vivado/pynq_training/mlp_sigmoid_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

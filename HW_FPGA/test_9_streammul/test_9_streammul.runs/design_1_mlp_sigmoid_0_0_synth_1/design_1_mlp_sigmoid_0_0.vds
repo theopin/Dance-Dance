@@ -1,0 +1,585 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Nov 10 22:52:15 2021
+# Process ID: 8706
+# Current directory: /home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.runs/design_1_mlp_sigmoid_0_0_synth_1
+# Command line: vivado -log design_1_mlp_sigmoid_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_mlp_sigmoid_0_0.tcl
+# Log file: /home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.runs/design_1_mlp_sigmoid_0_0_synth_1/design_1_mlp_sigmoid_0_0.vds
+# Journal file: /home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.runs/design_1_mlp_sigmoid_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_mlp_sigmoid_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/steve/Desktop/capstone/test_vivado/pynq_training/single_layer_nn/solution1/impl/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/steve/Desktop/capstone/test_vivado/pynq_training/mlp/solution1/impl/ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/steve/Desktop/capstone/test_vivado/pynq_training/mlp_sigmoid/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+Command: synth_design -top design_1_mlp_sigmoid_0_0 -part xczu3eg-sbva484-1-i -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu3eg'
+INFO: [Device 21-403] Loading part xczu3eg-sbva484-1-i
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8838
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2696.672 ; gain = 31.902 ; free physical = 913 ; free virtual = 5908
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_mlp_sigmoid_0_0' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ip/design_1_mlp_sigmoid_0_0/synth/design_1_mlp_sigmoid_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid.v:12]
+	Parameter ap_ST_fsm_state1 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000 
+	Parameter ap_ST_fsm_pp5_stage0 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000 
+	Parameter ap_ST_fsm_state21 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000 
+	Parameter ap_ST_fsm_state22 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000 
+	Parameter ap_ST_fsm_state23 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000 
+	Parameter ap_ST_fsm_state24 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000 
+	Parameter ap_ST_fsm_state25 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000 
+	Parameter ap_ST_fsm_state26 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000 
+	Parameter ap_ST_fsm_state27 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000 
+	Parameter ap_ST_fsm_state28 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000 
+	Parameter ap_ST_fsm_state29 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000 
+	Parameter ap_ST_fsm_state30 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000 
+	Parameter ap_ST_fsm_state31 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000 
+	Parameter ap_ST_fsm_state32 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000 
+	Parameter ap_ST_fsm_state33 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000 
+	Parameter ap_ST_fsm_state34 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000 
+	Parameter ap_ST_fsm_state35 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000 
+	Parameter ap_ST_fsm_state36 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000 
+	Parameter ap_ST_fsm_state37 bound to: 91'b0000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000 
+	Parameter ap_ST_fsm_state38 bound to: 91'b0000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000 
+	Parameter ap_ST_fsm_state39 bound to: 91'b0000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000 
+	Parameter ap_ST_fsm_state40 bound to: 91'b0000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000 
+	Parameter ap_ST_fsm_state41 bound to: 91'b0000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state42 bound to: 91'b0000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state43 bound to: 91'b0000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state44 bound to: 91'b0000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state45 bound to: 91'b0000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp6_stage0 bound to: 91'b0000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state54 bound to: 91'b0000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state55 bound to: 91'b0000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state56 bound to: 91'b0000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state57 bound to: 91'b0000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state58 bound to: 91'b0000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state59 bound to: 91'b0000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state60 bound to: 91'b0000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state61 bound to: 91'b0000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state62 bound to: 91'b0000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state63 bound to: 91'b0000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state64 bound to: 91'b0000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state65 bound to: 91'b0000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state66 bound to: 91'b0000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state67 bound to: 91'b0000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state68 bound to: 91'b0000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state69 bound to: 91'b0000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state70 bound to: 91'b0000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state71 bound to: 91'b0000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state72 bound to: 91'b0000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state73 bound to: 91'b0000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state74 bound to: 91'b0000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state75 bound to: 91'b0000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state76 bound to: 91'b0000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state77 bound to: 91'b0000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state78 bound to: 91'b0000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp7_stage0 bound to: 91'b0000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state87 bound to: 91'b0000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state88 bound to: 91'b0000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state89 bound to: 91'b0000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state90 bound to: 91'b0000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state91 bound to: 91'b0000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state92 bound to: 91'b0000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state93 bound to: 91'b0000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state94 bound to: 91'b0000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state95 bound to: 91'b0000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state96 bound to: 91'b0000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state97 bound to: 91'b0000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state98 bound to: 91'b0000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state99 bound to: 91'b0000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state100 bound to: 91'b0000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state101 bound to: 91'b0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state102 bound to: 91'b0000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state103 bound to: 91'b0000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state104 bound to: 91'b0000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state105 bound to: 91'b0000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state106 bound to: 91'b0000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state107 bound to: 91'b0000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state108 bound to: 91'b0000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state109 bound to: 91'b0001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state110 bound to: 91'b0010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_pp8_stage0 bound to: 91'b0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state114 bound to: 91'b1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_InputToLayer1Weights' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_InputToLayer1Weights.v:39]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 18688 - type: integer 
+	Parameter AddressWidth bound to: 15 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_InputToLayer1Weights_rom' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_InputToLayer1Weights.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 15 - type: integer 
+	Parameter MEM_SIZE bound to: 18688 - type: integer 
+INFO: [Synth 8-3876] $readmem data file './mlp_sigmoid_InputToLayer1Weights_rom.dat' is read successfully [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_InputToLayer1Weights.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_InputToLayer1Weights_rom' (1#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_InputToLayer1Weights.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_InputToLayer1Weights' (2#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_InputToLayer1Weights.v:39]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_Layer1ToLayer2Weights' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1ToLayer2Weights.v:39]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 32896 - type: integer 
+	Parameter AddressWidth bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_Layer1ToLayer2Weights_rom' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1ToLayer2Weights.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 16 - type: integer 
+	Parameter MEM_SIZE bound to: 32896 - type: integer 
+INFO: [Synth 8-3876] $readmem data file './mlp_sigmoid_Layer1ToLayer2Weights_rom.dat' is read successfully [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1ToLayer2Weights.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_Layer1ToLayer2Weights_rom' (3#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1ToLayer2Weights.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_Layer1ToLayer2Weights' (4#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1ToLayer2Weights.v:39]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_Layer2ToOutputWeights' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2ToOutputWeights.v:39]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 1161 - type: integer 
+	Parameter AddressWidth bound to: 11 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_Layer2ToOutputWeights_rom' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2ToOutputWeights.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 11 - type: integer 
+	Parameter MEM_SIZE bound to: 1161 - type: integer 
+INFO: [Synth 8-3876] $readmem data file './mlp_sigmoid_Layer2ToOutputWeights_rom.dat' is read successfully [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2ToOutputWeights.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_Layer2ToOutputWeights_rom' (5#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2ToOutputWeights.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_Layer2ToOutputWeights' (6#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2ToOutputWeights.v:39]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_Layer1_out' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1_out.v:37]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 257 - type: integer 
+	Parameter AddressWidth bound to: 9 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_Layer1_out_ram' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1_out.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 9 - type: integer 
+	Parameter MEM_SIZE bound to: 257 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_Layer1_out_ram' (7#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1_out.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_Layer1_out' (8#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1_out.v:37]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_Layer2_out' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2_out.v:37]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 129 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_Layer2_out_ram' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2_out.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 129 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_Layer2_out_ram' (9#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2_out.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_Layer2_out' (10#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2_out.v:37]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_Out_layer' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Out_layer.v:37]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 10 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_Out_layer_ram' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Out_layer.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_Out_layer_ram' (11#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Out_layer.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_Out_layer' (12#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Out_layer.v:37]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_incoming_inputs' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_incoming_inputs.v:37]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 73 - type: integer 
+	Parameter AddressWidth bound to: 7 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_incoming_inputs_ram' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_incoming_inputs.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 7 - type: integer 
+	Parameter MEM_SIZE bound to: 73 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_incoming_inputs_ram' (13#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_incoming_inputs.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_incoming_inputs' (14#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_incoming_inputs.v:37]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_fadd_32ns_32ns_32_5_full_dsp_1' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fadd_32ns_32ns_32_5_full_dsp_1.v:8]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 5 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_ap_fadd_3_full_dsp_32' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fadd_3_full_dsp_32.v:60]
+INFO: [Synth 8-6157] synthesizing module 'LUT1' [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:39137]
+INFO: [Synth 8-6155] done synthesizing module 'LUT1' (15#1) [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:39137]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_ap_fadd_3_full_dsp_32' (34#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fadd_3_full_dsp_32.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_fadd_32ns_32ns_32_5_full_dsp_1' (35#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fadd_32ns_32ns_32_5_full_dsp_1.v:8]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_fmul_32ns_32ns_32_4_max_dsp_1' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fmul_32ns_32ns_32_4_max_dsp_1.v:8]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 4 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_ap_fmul_2_max_dsp_32' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fmul_2_max_dsp_32.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_ap_fmul_2_max_dsp_32' (43#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fmul_2_max_dsp_32.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_fmul_32ns_32ns_32_4_max_dsp_1' (44#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fmul_32ns_32ns_32_4_max_dsp_1.v:8]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_fdiv_32ns_32ns_32_10_no_dsp_1' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fdiv_32ns_32ns_32_10_no_dsp_1.v:8]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 10 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_ap_fdiv_8_no_dsp_32' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fdiv_8_no_dsp_32.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_ap_fdiv_8_no_dsp_32' (51#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fdiv_8_no_dsp_32.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_fdiv_32ns_32ns_32_10_no_dsp_1' (52#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fdiv_32ns_32ns_32_10_no_dsp_1.v:8]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_fexp_32ns_32ns_32_8_full_dsp_1' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fexp_32ns_32ns_32_8_full_dsp_1.v:8]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 8 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_ap_fexp_6_full_dsp_32' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fexp_6_full_dsp_32.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_ap_fexp_6_full_dsp_32' (65#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fexp_6_full_dsp_32.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_fexp_32ns_32ns_32_8_full_dsp_1' (66#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fexp_32ns_32ns_32_8_full_dsp_1.v:8]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_facc_32ns_32ns_1ns_32_3_no_dsp_1' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_facc_32ns_32ns_1ns_32_3_no_dsp_1.v:8]
+	Parameter DWIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FAcc' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/FAcc.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'FAcc' (71#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/FAcc.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_facc_32ns_32ns_1ns_32_3_no_dsp_1' (72#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_facc_32ns_32ns_1ns_32_3_no_dsp_1.v:8]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_regslice_both' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_regslice_both.v:8]
+	Parameter DataWidth bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_regslice_both' (73#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_regslice_both.v:8]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_regslice_both__parameterized0' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_regslice_both.v:8]
+	Parameter DataWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_regslice_both__parameterized0' (73#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_regslice_both.v:8]
+INFO: [Synth 8-6157] synthesizing module 'mlp_sigmoid_regslice_both__parameterized1' [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_regslice_both.v:8]
+	Parameter DataWidth bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid_regslice_both__parameterized1' (73#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_regslice_both.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'mlp_sigmoid' (74#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_mlp_sigmoid_0_0' (75#1) [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ip/design_1_mlp_sigmoid_0_0/synth/design_1_mlp_sigmoid_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 2894.977 ; gain = 230.207 ; free physical = 875 ; free virtual = 5863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 2907.852 ; gain = 243.082 ; free physical = 901 ; free virtual = 5889
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 2907.852 ; gain = 243.082 ; free physical = 901 ; free virtual = 5889
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.20 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2915.789 ; gain = 0.000 ; free physical = 881 ; free virtual = 5869
+INFO: [Netlist 29-17] Analyzing 2362 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ip/design_1_mlp_sigmoid_0_0/constraints/mlp_sigmoid_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.gen/sources_1/bd/design_1/ip/design_1_mlp_sigmoid_0_0/constraints/mlp_sigmoid_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.runs/design_1_mlp_sigmoid_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.runs/design_1_mlp_sigmoid_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3075.633 ; gain = 0.000 ; free physical = 772 ; free virtual = 5756
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 68 instances were transformed.
+  DSP48E1 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 12 instances
+  FDE => FDRE: 56 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.10 . Memory (MB): peak = 3075.633 ; gain = 0.000 ; free physical = 771 ; free virtual = 5755
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 3075.633 ; gain = 410.863 ; free physical = 882 ; free virtual = 5866
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu3eg-sbva484-1-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 3075.633 ; gain = 410.863 ; free physical = 882 ; free virtual = 5866
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.runs/design_1_mlp_sigmoid_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 3075.633 ; gain = 410.863 ; free physical = 881 ; free virtual = 5865
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-6904] The RAM "mlp_sigmoid_Layer2_out_ram:/ram_reg" of size (depth=129 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "mlp_sigmoid_Out_layer_ram:/ram_reg" of size (depth=10 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "mlp_sigmoid_incoming_inputs_ram:/ram_reg" of size (depth=73 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 3075.633 ; gain = 410.863 ; free physical = 855 ; free virtual = 5844
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/mlp_sigmoid_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/SUB_DELAY' (delay__parameterized0) to 'inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/mlp_sigmoid_ap_fadd_3_full_dsp_32_u/inst/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/SUB_ADD_IP_DELAY'
+INFO: [Synth 8-223] decloning instance 'inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/mlp_sigmoid_ap_fadd_3_full_dsp_32_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/mlp_sigmoid_ap_fadd_3_full_dsp_32_u/inst/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/mlp_sigmoid_ap_fadd_3_full_dsp_32_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'inst/fadd_32ns_32ns_32_5_full_dsp_1_U1/mlp_sigmoid_ap_fadd_3_full_dsp_32_u/inst/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/fmul_32ns_32ns_32_4_max_dsp_1_U2/mlp_sigmoid_ap_fmul_2_max_dsp_32_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'inst/fmul_32ns_32ns_32_4_max_dsp_1_U2/mlp_sigmoid_ap_fmul_2_max_dsp_32_u/inst/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/fmul_32ns_32ns_32_4_max_dsp_1_U2/mlp_sigmoid_ap_fmul_2_max_dsp_32_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'inst/fmul_32ns_32ns_32_4_max_dsp_1_U2/mlp_sigmoid_ap_fmul_2_max_dsp_32_u/inst/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/fdiv_32ns_32ns_32_10_no_dsp_1_U3/mlp_sigmoid_ap_fdiv_8_no_dsp_32_u/inst/i_synth/DIV_OP.SPD.OP/ROUND/EXTRA_LSB_BIT_DEL' (delay__parameterized0) to 'inst/fdiv_32ns_32ns_32_10_no_dsp_1_U3/mlp_sigmoid_ap_fdiv_8_no_dsp_32_u/inst/i_synth/DIV_OP.SPD.OP/ROUND/EXTRA_LSB_RND1_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/fdiv_32ns_32ns_32_10_no_dsp_1_U3/mlp_sigmoid_ap_fdiv_8_no_dsp_32_u/inst/i_synth/DIV_OP.SPD.OP/ROUND/EXP_INC_DELAY' (delay__parameterized0) to 'inst/fdiv_32ns_32ns_32_10_no_dsp_1_U3/mlp_sigmoid_ap_fdiv_8_no_dsp_32_u/inst/i_synth/DIV_OP.SPD.OP/ROUND/EXP_INC_RND1_DELAY'
+INFO: [Synth 8-223] decloning instance 'inst/fdiv_32ns_32ns_32_10_no_dsp_1_U3/mlp_sigmoid_ap_fdiv_8_no_dsp_32_u/inst/i_synth/DIV_OP.SPD.OP/ROUND/EXP_IN_DELAY.EXP_IN_DEL' (delay__parameterized27) to 'inst/fdiv_32ns_32ns_32_10_no_dsp_1_U3/mlp_sigmoid_ap_fdiv_8_no_dsp_32_u/inst/i_synth/DIV_OP.SPD.OP/ROUND/EXP_RND2_DELAY.EXP_RND_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/fdiv_32ns_32ns_32_10_no_dsp_1_U3/mlp_sigmoid_ap_fdiv_8_no_dsp_32_u/inst/i_synth/DIV_OP.SPD.OP/ROUND/EXP_IN_DELAY.EXP_OFF_OP_DEL' (delay__parameterized27) to 'inst/fdiv_32ns_32ns_32_10_no_dsp_1_U3/mlp_sigmoid_ap_fdiv_8_no_dsp_32_u/inst/i_synth/DIV_OP.SPD.OP/ROUND/EXP_RND2_DELAY.EXP_OFF_RND_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/fdiv_32ns_32ns_32_10_no_dsp_1_U3/mlp_sigmoid_ap_fdiv_8_no_dsp_32_u/inst/i_synth/DELAY_ACCUM_OVERFLOW' (delay__parameterized0) to 'inst/fdiv_32ns_32ns_32_10_no_dsp_1_U3/mlp_sigmoid_ap_fdiv_8_no_dsp_32_u/inst/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_ccm_recip_ln2/g_tables[0].i_sign_delay' (delay__parameterized0) to 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_ccm_recip_ln2/g_tables[1].i_sign_delay'
+INFO: [Synth 8-223] decloning instance 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_ccm_ln2/g_tables[0].i_sign_delay' (delay__parameterized0) to 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_ccm_ln2/g_tables[1].i_sign_delay'
+INFO: [Synth 8-223] decloning instance 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_renorm_and_round/EXTRA_LSB_BIT_DEL' (delay__parameterized0) to 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_renorm_and_round/EXTRA_LSB_RND1_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_renorm_and_round/EXP_INC_DELAY' (delay__parameterized0) to 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_renorm_and_round/EXP_INC_RND1_DELAY'
+INFO: [Synth 8-223] decloning instance 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_renorm_and_round/EXP_IN_DELAY.EXP_IN_DEL' (delay__parameterized27) to 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_renorm_and_round/EXP_RND2_DELAY.EXP_RND_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_renorm_and_round/EXP_IN_DELAY.EXP_OFF_OP_DEL' (delay__parameterized27) to 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/EXP_OP.i_sp_or_dp.OP/i_renorm_and_round/EXP_RND2_DELAY.EXP_OFF_RND_DEL'
+INFO: [Synth 8-223] decloning instance 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/DELAY_INVALID_OP' (delay__parameterized0) to 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/DELAY_DIVIDE_BY_ZERO'
+INFO: [Synth 8-223] decloning instance 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/DELAY_INVALID_OP' (delay__parameterized0) to 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/DELAY_ACCUM_OVERFLOW'
+INFO: [Synth 8-223] decloning instance 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/DELAY_INVALID_OP' (delay__parameterized0) to 'inst/fexp_32ns_32ns_32_8_full_dsp_1_U4/mlp_sigmoid_ap_fexp_6_full_dsp_32_u/inst/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 360 (col length:72)
+BRAMs: 432 (col length: RAMB18 72 RAMB36 36)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6904] The RAM "inst/incoming_inputs_U/mlp_sigmoid_incoming_inputs_ram_U/ram_reg" of size (depth=73 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "inst/Layer2_out_U/mlp_sigmoid_Layer2_out_ram_U/ram_reg" of size (depth=129 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "inst/Out_layer_U/mlp_sigmoid_Out_layer_ram_U/ram_reg" of size (depth=10 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "inst/incoming_inputs_U/mlp_sigmoid_incoming_inputs_ram_U/ram_reg" of size (depth=73 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "inst/Layer2_out_U/mlp_sigmoid_Layer2_out_ram_U/ram_reg" of size (depth=129 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "inst/Out_layer_U/mlp_sigmoid_Out_layer_ram_U/ram_reg" of size (depth=10 x width=32) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:56 ; elapsed = 00:02:03 . Memory (MB): peak = 3075.633 ; gain = 410.863 ; free physical = 766 ; free virtual = 5777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:07 ; elapsed = 00:02:20 . Memory (MB): peak = 3530.023 ; gain = 865.254 ; free physical = 165 ; free virtual = 5131
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:13 ; elapsed = 00:02:26 . Memory (MB): peak = 3627.062 ; gain = 962.293 ; free physical = 179 ; free virtual = 5099
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_16 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_17 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_18 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_19 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_20 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_21 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_22 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_23 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_24 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_25 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_26 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_27 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_28 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_29 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_0_30 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_16 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_17 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_18 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_19 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_20 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_21 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_22 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_23 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_24 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_25 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_26 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_27 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_28 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_29 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/q0_reg_1_30 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Layer1_out_U/mlp_sigmoid_Layer1_out_ram_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Layer1_out_U/mlp_sigmoid_Layer1_out_ram_U/ram_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_16 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_17 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_18 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_19 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_20 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_21 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_22 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_23 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_24 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_25 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_26 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_27 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_28 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_29 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/InputToLayer1Weights_U/mlp_sigmoid_InputToLayer1Weights_rom_U/q0_reg_0_30 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Layer2ToOutputWeights_U/mlp_sigmoid_Layer2ToOutputWeights_rom_U/q0_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance inst/Layer2ToOutputWeights_U/mlp_sigmoid_Layer2ToOutputWeights_rom_U/q0_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:16 ; elapsed = 00:02:30 . Memory (MB): peak = 3635.070 ; gain = 970.301 ; free physical = 194 ; free virtual = 5114
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:19 ; elapsed = 00:02:33 . Memory (MB): peak = 3635.070 ; gain = 970.301 ; free physical = 152 ; free virtual = 5078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:19 ; elapsed = 00:02:33 . Memory (MB): peak = 3635.070 ; gain = 970.301 ; free physical = 152 ; free virtual = 5078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:20 ; elapsed = 00:02:33 . Memory (MB): peak = 3635.070 ; gain = 970.301 ; free physical = 167 ; free virtual = 5073
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:20 ; elapsed = 00:02:33 . Memory (MB): peak = 3635.070 ; gain = 970.301 ; free physical = 167 ; free virtual = 5073
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:20 ; elapsed = 00:02:34 . Memory (MB): peak = 3635.070 ; gain = 970.301 ; free physical = 167 ; free virtual = 5074
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:20 ; elapsed = 00:02:34 . Memory (MB): peak = 3635.070 ; gain = 970.301 ; free physical = 173 ; free virtual = 5079
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY8    |    32|
+|2     |DSP48E1   |    12|
+|3     |LUT1      |    72|
+|4     |LUT2      |   536|
+|5     |LUT3      |  1189|
+|6     |LUT4      |   950|
+|7     |LUT5      |   968|
+|8     |LUT6      |  2056|
+|9     |MUXCY     |  1358|
+|10    |MUXF7     |   193|
+|11    |MUXF8     |     2|
+|12    |RAM128X1S |    32|
+|13    |RAM16X1S  |    96|
+|14    |RAM64X1S  |    32|
+|15    |RAMB18E2  |     1|
+|16    |RAMB36E2  |    95|
+|108   |SRL16E    |    68|
+|109   |XORCY     |   811|
+|110   |FDE       |    53|
+|111   |FDRE      |  2073|
+|112   |FDSE      |    20|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:20 ; elapsed = 00:02:34 . Memory (MB): peak = 3635.070 ; gain = 970.301 ; free physical = 172 ; free virtual = 5079
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:13 ; elapsed = 00:02:26 . Memory (MB): peak = 3635.070 ; gain = 802.520 ; free physical = 210 ; free virtual = 5117
+Synthesis Optimization Complete : Time (s): cpu = 00:02:20 ; elapsed = 00:02:34 . Memory (MB): peak = 3635.078 ; gain = 970.301 ; free physical = 210 ; free virtual = 5117
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.13 . Memory (MB): peak = 3635.078 ; gain = 0.000 ; free physical = 290 ; free virtual = 5196
+INFO: [Netlist 29-17] Analyzing 2621 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-422] The CLOCK_DOMAINS attribute on the BRAM cell inst/Layer1_out_U/mlp_sigmoid_Layer1_out_ram_U/ram_reg has been changed from INDEPENDENT to COMMON to match the clocking topology used for the BRAM.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3667.086 ; gain = 0.000 ; free physical = 262 ; free virtual = 5156
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 475 instances were transformed.
+  (CARRY4) => CARRY8: 250 instances
+  DSP48E1 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 12 instances
+  FDE => FDRE: 53 instances
+  RAM128X1S => RAM128X1S (MUXF7, RAMS64E(x2)): 32 instances
+  RAM16X1S => RAM32X1S (RAMS32): 96 instances
+  RAM64X1S => RAM64X1S (RAMS64E): 32 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+213 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:31 ; elapsed = 00:02:44 . Memory (MB): peak = 3667.086 ; gain = 1261.555 ; free physical = 553 ; free virtual = 5447
+INFO: [Common 17-1381] The checkpoint '/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.runs/design_1_mlp_sigmoid_0_0_synth_1/design_1_mlp_sigmoid_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_mlp_sigmoid_0_0, cache-ID = 7bbad2ece544f251
+INFO: [Coretcl 2-1174] Renamed 510 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/steve/Desktop/capstone/test_vivado/test_9_streammul/test_9_streammul.runs/design_1_mlp_sigmoid_0_0_synth_1/design_1_mlp_sigmoid_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_mlp_sigmoid_0_0_utilization_synth.rpt -pb design_1_mlp_sigmoid_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 10 22:55:15 2021...

@@ -1,0 +1,1376 @@
+
+
+================================================================
+== Vitis HLS Report for 'mlp_sigmoid'
+================================================================
+* Date:           Wed Nov 10 22:44:26 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        mlp_sigmoid
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.708 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    65887|    65887|  0.659 ms|  0.659 ms|  65888|  65888|     none|
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1             |      257|      257|         1|          1|          1|   257|       yes|
+        |- Loop 2             |      129|      129|         1|          1|          1|   129|       yes|
+        |- Loop 3             |       10|       10|         1|          1|          1|    10|       yes|
+        |- Loop 4             |       73|       73|         1|          1|          1|    73|       yes|
+        |- VITIS_LOOP_500_1   |       72|       72|         1|          1|          1|    72|       yes|
+        |- VITIS_LOOP_519_2   |    26880|    26880|       105|          -|          -|   256|        no|
+        | + VITIS_LOOP_523_3  |       79|       79|         8|          1|          1|    73|       yes|
+        |- VITIS_LOOP_536_4   |    36992|    36992|       289|          -|          -|   128|        no|
+        | + VITIS_LOOP_541_5  |      263|      263|         8|          1|          1|   257|       yes|
+        |- VITIS_LOOP_553_6   |     1449|     1449|       161|          -|          -|     9|        no|
+        | + VITIS_LOOP_557_7  |      135|      135|         8|          1|          1|   129|       yes|
+        |- VITIS_LOOP_565_8   |       10|       10|         3|          1|          1|     9|       yes|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+  * Pipeline-1: initiation interval (II) = 1, depth = 1
+  * Pipeline-2: initiation interval (II) = 1, depth = 1
+  * Pipeline-3: initiation interval (II) = 1, depth = 1
+  * Pipeline-4: initiation interval (II) = 1, depth = 1
+  * Pipeline-5: initiation interval (II) = 1, depth = 8
+  * Pipeline-6: initiation interval (II) = 1, depth = 8
+  * Pipeline-7: initiation interval (II) = 1, depth = 8
+  * Pipeline-8: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 114
+* Pipeline : 9
+  Pipeline-0 : II = 1, D = 1, States = { 2 }
+  Pipeline-1 : II = 1, D = 1, States = { 4 }
+  Pipeline-2 : II = 1, D = 1, States = { 6 }
+  Pipeline-3 : II = 1, D = 1, States = { 8 }
+  Pipeline-4 : II = 1, D = 1, States = { 10 }
+  Pipeline-5 : II = 1, D = 8, States = { 13 14 15 16 17 18 19 20 }
+  Pipeline-6 : II = 1, D = 8, States = { 46 47 48 49 50 51 52 53 }
+  Pipeline-7 : II = 1, D = 8, States = { 79 80 81 82 83 84 85 86 }
+  Pipeline-8 : II = 1, D = 3, States = { 111 112 113 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 2 
+3 --> 4 
+4 --> 5 4 
+5 --> 6 
+6 --> 7 6 
+7 --> 8 
+8 --> 9 8 
+9 --> 10 
+10 --> 11 10 
+11 --> 12 
+12 --> 13 45 
+13 --> 21 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 13 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 12 
+45 --> 46 78 
+46 --> 54 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 46 
+54 --> 55 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 66 
+66 --> 67 
+67 --> 68 
+68 --> 69 
+69 --> 70 
+70 --> 71 
+71 --> 72 
+72 --> 73 
+73 --> 74 
+74 --> 75 
+75 --> 76 
+76 --> 77 
+77 --> 45 
+78 --> 79 111 
+79 --> 87 80 
+80 --> 81 
+81 --> 82 
+82 --> 83 
+83 --> 84 
+84 --> 85 
+85 --> 86 
+86 --> 79 
+87 --> 88 
+88 --> 89 
+89 --> 90 
+90 --> 91 
+91 --> 92 
+92 --> 93 
+93 --> 94 
+94 --> 95 
+95 --> 96 
+96 --> 97 
+97 --> 98 
+98 --> 99 
+99 --> 100 
+100 --> 101 
+101 --> 102 
+102 --> 103 
+103 --> 104 
+104 --> 105 
+105 --> 106 
+106 --> 107 
+107 --> 108 
+108 --> 109 
+109 --> 110 
+110 --> 78 
+111 --> 114 112 
+112 --> 113 
+113 --> 111 
+114 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.48>
+ST_1 : Operation 115 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_5"   --->   Operation 115 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 116 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %S_AXIS_V_data_V, i4 %S_AXIS_V_keep_V, i4 %S_AXIS_V_strb_V, i1 %S_AXIS_V_last_V, void @empty_8, i32 1, i32 1, void @empty, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 117 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %S_AXIS_V_data_V"   --->   Operation 118 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 119 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %S_AXIS_V_keep_V"   --->   Operation 119 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 120 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %S_AXIS_V_strb_V"   --->   Operation 120 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 121 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %S_AXIS_V_last_V"   --->   Operation 121 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 122 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %M_AXIS_V_data_V, i4 %M_AXIS_V_keep_V, i4 %M_AXIS_V_strb_V, i1 %M_AXIS_V_last_V, void @empty_8, i32 1, i32 1, void @empty, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 122 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 123 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %M_AXIS_V_data_V"   --->   Operation 123 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 124 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %M_AXIS_V_keep_V"   --->   Operation 124 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 125 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i4 %M_AXIS_V_strb_V"   --->   Operation 125 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 126 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %M_AXIS_V_last_V"   --->   Operation 126 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 127 [1/1] (0.00ns)   --->   "%Layer1_out = alloca i64 1" [mlp_sigmoid.cpp:494]   --->   Operation 127 'alloca' 'Layer1_out' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 257> <RAM>
+ST_1 : Operation 128 [1/1] (0.00ns)   --->   "%Layer2_out = alloca i64 1" [mlp_sigmoid.cpp:495]   --->   Operation 128 'alloca' 'Layer2_out' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 129> <RAM>
+ST_1 : Operation 129 [1/1] (0.00ns)   --->   "%Out_layer = alloca i64 1" [mlp_sigmoid.cpp:496]   --->   Operation 129 'alloca' 'Out_layer' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 130 [1/1] (0.00ns)   --->   "%incoming_inputs = alloca i64 1" [mlp_sigmoid.cpp:497]   --->   Operation 130 'alloca' 'incoming_inputs' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 73> <RAM>
+ST_1 : Operation 131 [1/1] (0.48ns)   --->   "%br_ln494 = br void %memset.loop85" [mlp_sigmoid.cpp:494]   --->   Operation 131 'br' 'br_ln494' <Predicate = true> <Delay = 0.48>
+
+State 2 <SV = 1> <Delay = 2.20>
+ST_2 : Operation 132 [1/1] (0.00ns)   --->   "%empty = phi i9 0, void, i9 %empty_15, void %memset.loop85.split"   --->   Operation 132 'phi' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 133 [1/1] (0.92ns)   --->   "%empty_15 = add i9 %empty, i9 1"   --->   Operation 133 'add' 'empty_15' <Predicate = true> <Delay = 0.92> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 134 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 134 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 135 [1/1] (0.85ns)   --->   "%exitcond11021 = icmp_eq  i9 %empty, i9 257"   --->   Operation 135 'icmp' 'exitcond11021' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 136 [1/1] (0.00ns)   --->   "%empty_16 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 257, i64 257, i64 257"   --->   Operation 136 'speclooptripcount' 'empty_16' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 137 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond11021, void %memset.loop85.split, void %memset.loop83.preheader"   --->   Operation 137 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 138 [1/1] (0.00ns)   --->   "%p_cast = zext i9 %empty"   --->   Operation 138 'zext' 'p_cast' <Predicate = (!exitcond11021)> <Delay = 0.00>
+ST_2 : Operation 139 [1/1] (0.00ns)   --->   "%Layer1_out_addr = getelementptr i32 %Layer1_out, i64 0, i64 %p_cast"   --->   Operation 139 'getelementptr' 'Layer1_out_addr' <Predicate = (!exitcond11021)> <Delay = 0.00>
+ST_2 : Operation 140 [1/1] (1.35ns)   --->   "%store_ln0 = store i32 0, i9 %Layer1_out_addr"   --->   Operation 140 'store' 'store_ln0' <Predicate = (!exitcond11021)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 257> <RAM>
+ST_2 : Operation 141 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop85"   --->   Operation 141 'br' 'br_ln0' <Predicate = (!exitcond11021)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.48>
+ST_3 : Operation 142 [1/1] (0.48ns)   --->   "%br_ln0 = br void %memset.loop83"   --->   Operation 142 'br' 'br_ln0' <Predicate = true> <Delay = 0.48>
+
+State 4 <SV = 3> <Delay = 2.20>
+ST_4 : Operation 143 [1/1] (0.00ns)   --->   "%empty_17 = phi i8 %empty_18, void %memset.loop83.split, i8 0, void %memset.loop83.preheader"   --->   Operation 143 'phi' 'empty_17' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 144 [1/1] (0.90ns)   --->   "%empty_18 = add i8 %empty_17, i8 1"   --->   Operation 144 'add' 'empty_18' <Predicate = true> <Delay = 0.90> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 145 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 145 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 146 [1/1] (0.85ns)   --->   "%exitcond10920 = icmp_eq  i8 %empty_17, i8 129"   --->   Operation 146 'icmp' 'exitcond10920' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 147 [1/1] (0.00ns)   --->   "%empty_19 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 129, i64 129, i64 129"   --->   Operation 147 'speclooptripcount' 'empty_19' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 148 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond10920, void %memset.loop83.split, void %memset.loop81.preheader"   --->   Operation 148 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 149 [1/1] (0.00ns)   --->   "%p_cast1 = zext i8 %empty_17"   --->   Operation 149 'zext' 'p_cast1' <Predicate = (!exitcond10920)> <Delay = 0.00>
+ST_4 : Operation 150 [1/1] (0.00ns)   --->   "%Layer2_out_addr = getelementptr i32 %Layer2_out, i64 0, i64 %p_cast1"   --->   Operation 150 'getelementptr' 'Layer2_out_addr' <Predicate = (!exitcond10920)> <Delay = 0.00>
+ST_4 : Operation 151 [1/1] (1.35ns)   --->   "%store_ln0 = store i32 0, i8 %Layer2_out_addr"   --->   Operation 151 'store' 'store_ln0' <Predicate = (!exitcond10920)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 129> <RAM>
+ST_4 : Operation 152 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop83"   --->   Operation 152 'br' 'br_ln0' <Predicate = (!exitcond10920)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 0.48>
+ST_5 : Operation 153 [1/1] (0.48ns)   --->   "%br_ln0 = br void %memset.loop81"   --->   Operation 153 'br' 'br_ln0' <Predicate = true> <Delay = 0.48>
+
+State 6 <SV = 5> <Delay = 1.67>
+ST_6 : Operation 154 [1/1] (0.00ns)   --->   "%empty_20 = phi i4 %empty_21, void %memset.loop81.split, i4 0, void %memset.loop81.preheader"   --->   Operation 154 'phi' 'empty_20' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 155 [1/1] (0.86ns)   --->   "%empty_21 = add i4 %empty_20, i4 1"   --->   Operation 155 'add' 'empty_21' <Predicate = true> <Delay = 0.86> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 156 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 156 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 157 [1/1] (0.88ns)   --->   "%exitcond10819 = icmp_eq  i4 %empty_20, i4 10"   --->   Operation 157 'icmp' 'exitcond10819' <Predicate = true> <Delay = 0.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 158 [1/1] (0.00ns)   --->   "%empty_22 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 10, i64 10, i64 10"   --->   Operation 158 'speclooptripcount' 'empty_22' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 159 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond10819, void %memset.loop81.split, void %memset.loop.preheader"   --->   Operation 159 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 160 [1/1] (0.00ns)   --->   "%p_cast2 = zext i4 %empty_20"   --->   Operation 160 'zext' 'p_cast2' <Predicate = (!exitcond10819)> <Delay = 0.00>
+ST_6 : Operation 161 [1/1] (0.00ns)   --->   "%Out_layer_addr = getelementptr i32 %Out_layer, i64 0, i64 %p_cast2"   --->   Operation 161 'getelementptr' 'Out_layer_addr' <Predicate = (!exitcond10819)> <Delay = 0.00>
+ST_6 : Operation 162 [1/1] (0.79ns)   --->   "%store_ln0 = store i32 0, i4 %Out_layer_addr"   --->   Operation 162 'store' 'store_ln0' <Predicate = (!exitcond10819)> <Delay = 0.79> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_6 : Operation 163 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop81"   --->   Operation 163 'br' 'br_ln0' <Predicate = (!exitcond10819)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 0.48>
+ST_7 : Operation 164 [1/1] (0.48ns)   --->   "%br_ln0 = br void %memset.loop"   --->   Operation 164 'br' 'br_ln0' <Predicate = true> <Delay = 0.48>
+
+State 8 <SV = 7> <Delay = 2.21>
+ST_8 : Operation 165 [1/1] (0.00ns)   --->   "%empty_23 = phi i7 %empty_24, void %memset.loop.split, i7 0, void %memset.loop.preheader"   --->   Operation 165 'phi' 'empty_23' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 166 [1/1] (0.89ns)   --->   "%empty_24 = add i7 %empty_23, i7 1"   --->   Operation 166 'add' 'empty_24' <Predicate = true> <Delay = 0.89> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 167 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 167 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 168 [1/1] (0.86ns)   --->   "%exitcond10718 = icmp_eq  i7 %empty_23, i7 73"   --->   Operation 168 'icmp' 'exitcond10718' <Predicate = true> <Delay = 0.86> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 169 [1/1] (0.00ns)   --->   "%empty_25 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 73, i64 73, i64 73"   --->   Operation 169 'speclooptripcount' 'empty_25' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 170 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond10718, void %memset.loop.split, void %split.preheader"   --->   Operation 170 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 171 [1/1] (0.00ns)   --->   "%p_cast3 = zext i7 %empty_23"   --->   Operation 171 'zext' 'p_cast3' <Predicate = (!exitcond10718)> <Delay = 0.00>
+ST_8 : Operation 172 [1/1] (0.00ns)   --->   "%incoming_inputs_addr = getelementptr i32 %incoming_inputs, i64 0, i64 %p_cast3"   --->   Operation 172 'getelementptr' 'incoming_inputs_addr' <Predicate = (!exitcond10718)> <Delay = 0.00>
+ST_8 : Operation 173 [1/1] (1.35ns)   --->   "%store_ln0 = store i32 0, i7 %incoming_inputs_addr"   --->   Operation 173 'store' 'store_ln0' <Predicate = (!exitcond10718)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 73> <RAM>
+ST_8 : Operation 174 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop"   --->   Operation 174 'br' 'br_ln0' <Predicate = (!exitcond10718)> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 0.48>
+ST_9 : Operation 175 [1/1] (0.48ns)   --->   "%br_ln0 = br void %split"   --->   Operation 175 'br' 'br_ln0' <Predicate = true> <Delay = 0.48>
+
+State 10 <SV = 9> <Delay = 2.21>
+ST_10 : Operation 176 [1/1] (0.00ns)   --->   "%i = phi i7 %add_ln500, void %.split15, i7 1, void %split.preheader" [mlp_sigmoid.cpp:500]   --->   Operation 176 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 177 [1/1] (0.00ns)   --->   "%p_phi = phi i4 %ref_tmp_keep, void %.split15, i4 0, void %split.preheader"   --->   Operation 177 'phi' 'p_phi' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 178 [1/1] (0.00ns)   --->   "%p_phi17 = phi i4 %ref_tmp_strb, void %.split15, i4 0, void %split.preheader"   --->   Operation 178 'phi' 'p_phi17' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 179 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 179 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 180 [1/1] (0.86ns)   --->   "%icmp_ln500 = icmp_eq  i7 %i, i7 73" [mlp_sigmoid.cpp:500]   --->   Operation 180 'icmp' 'icmp_ln500' <Predicate = true> <Delay = 0.86> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 181 [1/1] (0.00ns)   --->   "%empty_26 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 72, i64 72, i64 72"   --->   Operation 181 'speclooptripcount' 'empty_26' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 182 [1/1] (0.00ns)   --->   "%br_ln500 = br i1 %icmp_ln500, void %.split15, void" [mlp_sigmoid.cpp:500]   --->   Operation 182 'br' 'br_ln500' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 183 [1/1] (0.89ns)   --->   "%add_ln500 = add i7 %i, i7 1" [mlp_sigmoid.cpp:500]   --->   Operation 183 'add' 'add_ln500' <Predicate = (!icmp_ln500)> <Delay = 0.89> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 184 [1/1] (0.00ns)   --->   "%i_cast = zext i7 %i" [mlp_sigmoid.cpp:500]   --->   Operation 184 'zext' 'i_cast' <Predicate = (!icmp_ln500)> <Delay = 0.00>
+ST_10 : Operation 185 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @empty_10"   --->   Operation 185 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln500)> <Delay = 0.00>
+ST_10 : Operation 186 [1/1] (0.00ns)   --->   "%empty_27 = read i41 @_ssdm_op_Read.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %S_AXIS_V_data_V, i4 %S_AXIS_V_keep_V, i4 %S_AXIS_V_strb_V, i1 %S_AXIS_V_last_V"   --->   Operation 186 'read' 'empty_27' <Predicate = (!icmp_ln500)> <Delay = 0.00> <CoreInst = "axis">   --->   Core 123 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_10 : Operation 187 [1/1] (0.00ns)   --->   "%temp_data_V_2 = extractvalue i41 %empty_27"   --->   Operation 187 'extractvalue' 'temp_data_V_2' <Predicate = (!icmp_ln500)> <Delay = 0.00>
+ST_10 : Operation 188 [1/1] (0.00ns)   --->   "%ref_tmp_keep = extractvalue i41 %empty_27"   --->   Operation 188 'extractvalue' 'ref_tmp_keep' <Predicate = (!icmp_ln500)> <Delay = 0.00>
+ST_10 : Operation 189 [1/1] (0.00ns)   --->   "%ref_tmp_strb = extractvalue i41 %empty_27"   --->   Operation 189 'extractvalue' 'ref_tmp_strb' <Predicate = (!icmp_ln500)> <Delay = 0.00>
+ST_10 : Operation 190 [1/1] (0.00ns)   --->   "%bitcast_ln504 = bitcast i32 %temp_data_V_2" [mlp_sigmoid.cpp:504]   --->   Operation 190 'bitcast' 'bitcast_ln504' <Predicate = (!icmp_ln500)> <Delay = 0.00>
+ST_10 : Operation 191 [1/1] (0.00ns)   --->   "%incoming_inputs_addr_2 = getelementptr i32 %incoming_inputs, i64 0, i64 %i_cast" [mlp_sigmoid.cpp:504]   --->   Operation 191 'getelementptr' 'incoming_inputs_addr_2' <Predicate = (!icmp_ln500)> <Delay = 0.00>
+ST_10 : Operation 192 [1/1] (1.35ns)   --->   "%store_ln504 = store i32 %bitcast_ln504, i7 %incoming_inputs_addr_2" [mlp_sigmoid.cpp:504]   --->   Operation 192 'store' 'store_ln504' <Predicate = (!icmp_ln500)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 73> <RAM>
+ST_10 : Operation 193 [1/1] (0.00ns)   --->   "%br_ln0 = br void %split"   --->   Operation 193 'br' 'br_ln0' <Predicate = (!icmp_ln500)> <Delay = 0.00>
+
+State 11 <SV = 10> <Delay = 1.35>
+ST_11 : Operation 194 [1/1] (0.00ns)   --->   "%incoming_inputs_addr_1 = getelementptr i32 %incoming_inputs, i64 0, i64 0" [mlp_sigmoid.cpp:509]   --->   Operation 194 'getelementptr' 'incoming_inputs_addr_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 195 [1/1] (1.35ns)   --->   "%store_ln509 = store i32 1, i7 %incoming_inputs_addr_1" [mlp_sigmoid.cpp:509]   --->   Operation 195 'store' 'store_ln509' <Predicate = true> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 73> <RAM>
+ST_11 : Operation 196 [1/1] (0.48ns)   --->   "%br_ln519 = br void" [mlp_sigmoid.cpp:519]   --->   Operation 196 'br' 'br_ln519' <Predicate = true> <Delay = 0.48>
+
+State 12 <SV = 11> <Delay = 2.20>
+ST_12 : Operation 197 [1/1] (0.00ns)   --->   "%i_1 = phi i9 %add_ln528, void, i9 0, void" [mlp_sigmoid.cpp:528]   --->   Operation 197 'phi' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 198 [1/1] (0.92ns)   --->   "%add_ln528 = add i9 %i_1, i9 1" [mlp_sigmoid.cpp:528]   --->   Operation 198 'add' 'add_ln528' <Predicate = true> <Delay = 0.92> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 199 [1/1] (0.85ns)   --->   "%icmp_ln519 = icmp_eq  i9 %i_1, i9 256" [mlp_sigmoid.cpp:519]   --->   Operation 199 'icmp' 'icmp_ln519' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 200 [1/1] (0.00ns)   --->   "%empty_28 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 256, i64 256, i64 256"   --->   Operation 200 'speclooptripcount' 'empty_28' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 201 [1/1] (0.00ns)   --->   "%br_ln519 = br i1 %icmp_ln519, void %.split13, void" [mlp_sigmoid.cpp:519]   --->   Operation 201 'br' 'br_ln519' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 202 [1/1] (0.00ns)   --->   "%zext_ln522 = zext i9 %i_1" [mlp_sigmoid.cpp:522]   --->   Operation 202 'zext' 'zext_ln522' <Predicate = (!icmp_ln519)> <Delay = 0.00>
+ST_12 : Operation 203 [1/1] (0.00ns)   --->   "%specloopname_ln522 = specloopname void @_ssdm_op_SpecLoopName, void @empty_2" [mlp_sigmoid.cpp:522]   --->   Operation 203 'specloopname' 'specloopname_ln522' <Predicate = (!icmp_ln519)> <Delay = 0.00>
+ST_12 : Operation 204 [1/1] (0.48ns)   --->   "%br_ln523 = br void" [mlp_sigmoid.cpp:523]   --->   Operation 204 'br' 'br_ln523' <Predicate = (!icmp_ln519)> <Delay = 0.48>
+ST_12 : Operation 205 [1/1] (0.00ns)   --->   "%Layer1_out_addr_1 = getelementptr i32 %Layer1_out, i64 0, i64 0" [mlp_sigmoid.cpp:531]   --->   Operation 205 'getelementptr' 'Layer1_out_addr_1' <Predicate = (icmp_ln519)> <Delay = 0.00>
+ST_12 : Operation 206 [1/1] (1.35ns)   --->   "%store_ln531 = store i32 1, i9 %Layer1_out_addr_1" [mlp_sigmoid.cpp:531]   --->   Operation 206 'store' 'store_ln531' <Predicate = (icmp_ln519)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 257> <RAM>
+ST_12 : Operation 207 [1/1] (0.48ns)   --->   "%br_ln536 = br void" [mlp_sigmoid.cpp:536]   --->   Operation 207 'br' 'br_ln536' <Predicate = (icmp_ln519)> <Delay = 0.48>
+
+State 13 <SV = 12> <Delay = 2.35>
+ST_13 : Operation 208 [1/1] (0.00ns)   --->   "%j = phi i7 %add_ln523, void %.split11, i7 0, void %.split13" [mlp_sigmoid.cpp:523]   --->   Operation 208 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 209 [1/1] (0.00ns)   --->   "%sum = phi i32 %sum_1, void %.split11, i32 0, void %.split13"   --->   Operation 209 'phi' 'sum' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 210 [1/1] (0.89ns)   --->   "%add_ln523 = add i7 %j, i7 1" [mlp_sigmoid.cpp:523]   --->   Operation 210 'add' 'add_ln523' <Predicate = true> <Delay = 0.89> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 211 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 211 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 212 [1/1] (0.86ns)   --->   "%icmp_ln523 = icmp_eq  i7 %j, i7 73" [mlp_sigmoid.cpp:523]   --->   Operation 212 'icmp' 'icmp_ln523' <Predicate = true> <Delay = 0.86> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 213 [1/1] (0.00ns)   --->   "%empty_29 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 73, i64 73, i64 73"   --->   Operation 213 'speclooptripcount' 'empty_29' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 214 [1/1] (0.00ns)   --->   "%br_ln523 = br i1 %icmp_ln523, void %.split11, void" [mlp_sigmoid.cpp:523]   --->   Operation 214 'br' 'br_ln523' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 215 [1/1] (0.00ns)   --->   "%j_cast = zext i7 %j" [mlp_sigmoid.cpp:523]   --->   Operation 215 'zext' 'j_cast' <Predicate = (!icmp_ln523)> <Delay = 0.00>
+ST_13 : Operation 216 [1/1] (0.00ns)   --->   "%tmp_3 = bitconcatenate i15 @_ssdm_op_BitConcatenate.i15.i7.i8, i7 %j, i8 0" [mlp_sigmoid.cpp:525]   --->   Operation 216 'bitconcatenate' 'tmp_3' <Predicate = (!icmp_ln523)> <Delay = 0.00>
+ST_13 : Operation 217 [1/1] (1.00ns)   --->   "%add_ln525 = add i15 %tmp_3, i15 %zext_ln522" [mlp_sigmoid.cpp:525]   --->   Operation 217 'add' 'add_ln525' <Predicate = (!icmp_ln523)> <Delay = 1.00> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 218 [1/1] (0.00ns)   --->   "%zext_ln525 = zext i15 %add_ln525" [mlp_sigmoid.cpp:525]   --->   Operation 218 'zext' 'zext_ln525' <Predicate = (!icmp_ln523)> <Delay = 0.00>
+ST_13 : Operation 219 [1/1] (0.00ns)   --->   "%InputToLayer1Weights_addr = getelementptr i32 %InputToLayer1Weights, i64 0, i64 %zext_ln525" [mlp_sigmoid.cpp:525]   --->   Operation 219 'getelementptr' 'InputToLayer1Weights_addr' <Predicate = (!icmp_ln523)> <Delay = 0.00>
+ST_13 : Operation 220 [2/2] (1.35ns)   --->   "%InputToLayer1Weights_load = load i15 %InputToLayer1Weights_addr" [mlp_sigmoid.cpp:525]   --->   Operation 220 'load' 'InputToLayer1Weights_load' <Predicate = (!icmp_ln523)> <Delay = 1.35> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 18688> <ROM>
+ST_13 : Operation 221 [1/1] (0.00ns)   --->   "%incoming_inputs_addr_3 = getelementptr i32 %incoming_inputs, i64 0, i64 %j_cast" [mlp_sigmoid.cpp:525]   --->   Operation 221 'getelementptr' 'incoming_inputs_addr_3' <Predicate = (!icmp_ln523)> <Delay = 0.00>
+ST_13 : Operation 222 [2/2] (1.35ns)   --->   "%incoming_inputs_load = load i7 %incoming_inputs_addr_3" [mlp_sigmoid.cpp:525]   --->   Operation 222 'load' 'incoming_inputs_load' <Predicate = (!icmp_ln523)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 73> <RAM>
+
+State 14 <SV = 13> <Delay = 6.02>
+ST_14 : Operation 223 [1/2] (1.35ns)   --->   "%InputToLayer1Weights_load = load i15 %InputToLayer1Weights_addr" [mlp_sigmoid.cpp:525]   --->   Operation 223 'load' 'InputToLayer1Weights_load' <Predicate = (!icmp_ln523)> <Delay = 1.35> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 18688> <ROM>
+ST_14 : Operation 224 [1/2] (1.35ns)   --->   "%incoming_inputs_load = load i7 %incoming_inputs_addr_3" [mlp_sigmoid.cpp:525]   --->   Operation 224 'load' 'incoming_inputs_load' <Predicate = (!icmp_ln523)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 73> <RAM>
+ST_14 : Operation 225 [4/4] (4.67ns)   --->   "%mul = fmul i32 %InputToLayer1Weights_load, i32 %incoming_inputs_load" [mlp_sigmoid.cpp:525]   --->   Operation 225 'fmul' 'mul' <Predicate = (!icmp_ln523)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 14> <Delay = 4.67>
+ST_15 : Operation 226 [3/4] (4.67ns)   --->   "%mul = fmul i32 %InputToLayer1Weights_load, i32 %incoming_inputs_load" [mlp_sigmoid.cpp:525]   --->   Operation 226 'fmul' 'mul' <Predicate = (!icmp_ln523)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 15> <Delay = 4.67>
+ST_16 : Operation 227 [2/4] (4.67ns)   --->   "%mul = fmul i32 %InputToLayer1Weights_load, i32 %incoming_inputs_load" [mlp_sigmoid.cpp:525]   --->   Operation 227 'fmul' 'mul' <Predicate = (!icmp_ln523)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 16> <Delay = 4.67>
+ST_17 : Operation 228 [1/4] (4.67ns)   --->   "%mul = fmul i32 %InputToLayer1Weights_load, i32 %incoming_inputs_load" [mlp_sigmoid.cpp:525]   --->   Operation 228 'fmul' 'mul' <Predicate = (!icmp_ln523)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 6.34>
+ST_18 : Operation 229 [1/1] (0.86ns)   --->   "%icmp_ln525 = icmp_eq  i7 %add_ln523, i7 73" [mlp_sigmoid.cpp:525]   --->   Operation 229 'icmp' 'icmp_ln525' <Predicate = (!icmp_ln523)> <Delay = 0.86> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 230 [3/3] (5.48ns)   --->   "%sum_1 = facc i32 @_ssdm_op_FACC, i32 %mul, i1 %icmp_ln525" [mlp_sigmoid.cpp:525]   --->   Operation 230 'facc' 'sum_1' <Predicate = (!icmp_ln523)> <Delay = 5.48> <CoreInst = "FAcc_nodsp">   --->   Core 11 'FAcc_nodsp' <Latency = 2> <II = 1> <Delay = 5.48> <FuncUnit> <Opcode : 'facc'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 5.48>
+ST_19 : Operation 231 [2/3] (5.48ns)   --->   "%sum_1 = facc i32 @_ssdm_op_FACC, i32 %mul, i1 %icmp_ln525" [mlp_sigmoid.cpp:525]   --->   Operation 231 'facc' 'sum_1' <Predicate = (!icmp_ln523)> <Delay = 5.48> <CoreInst = "FAcc_nodsp">   --->   Core 11 'FAcc_nodsp' <Latency = 2> <II = 1> <Delay = 5.48> <FuncUnit> <Opcode : 'facc'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 5.48>
+ST_20 : Operation 232 [1/1] (0.00ns)   --->   "%specloopname_ln523 = specloopname void @_ssdm_op_SpecLoopName, void @empty_1" [mlp_sigmoid.cpp:523]   --->   Operation 232 'specloopname' 'specloopname_ln523' <Predicate = (!icmp_ln523)> <Delay = 0.00>
+ST_20 : Operation 233 [1/3] (5.48ns)   --->   "%sum_1 = facc i32 @_ssdm_op_FACC, i32 %mul, i1 %icmp_ln525" [mlp_sigmoid.cpp:525]   --->   Operation 233 'facc' 'sum_1' <Predicate = (!icmp_ln523)> <Delay = 5.48> <CoreInst = "FAcc_nodsp">   --->   Core 11 'FAcc_nodsp' <Latency = 2> <II = 1> <Delay = 5.48> <FuncUnit> <Opcode : 'facc'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 234 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 234 'br' 'br_ln0' <Predicate = (!icmp_ln523)> <Delay = 0.00>
+
+State 21 <SV = 13> <Delay = 6.00>
+ST_21 : Operation 235 [8/8] (6.00ns)   --->   "%tmp = fexp i32 @llvm.exp.f32, i32 %sum" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 235 'fexp' 'tmp' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 22 <SV = 14> <Delay = 6.00>
+ST_22 : Operation 236 [7/8] (6.00ns)   --->   "%tmp = fexp i32 @llvm.exp.f32, i32 %sum" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 236 'fexp' 'tmp' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 23 <SV = 15> <Delay = 6.00>
+ST_23 : Operation 237 [6/8] (6.00ns)   --->   "%tmp = fexp i32 @llvm.exp.f32, i32 %sum" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 237 'fexp' 'tmp' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 24 <SV = 16> <Delay = 6.00>
+ST_24 : Operation 238 [5/8] (6.00ns)   --->   "%tmp = fexp i32 @llvm.exp.f32, i32 %sum" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 238 'fexp' 'tmp' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 25 <SV = 17> <Delay = 6.00>
+ST_25 : Operation 239 [4/8] (6.00ns)   --->   "%tmp = fexp i32 @llvm.exp.f32, i32 %sum" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 239 'fexp' 'tmp' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 26 <SV = 18> <Delay = 6.00>
+ST_26 : Operation 240 [3/8] (6.00ns)   --->   "%tmp = fexp i32 @llvm.exp.f32, i32 %sum" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 240 'fexp' 'tmp' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 27 <SV = 19> <Delay = 6.00>
+ST_27 : Operation 241 [2/8] (6.00ns)   --->   "%tmp = fexp i32 @llvm.exp.f32, i32 %sum" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 241 'fexp' 'tmp' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 28 <SV = 20> <Delay = 6.00>
+ST_28 : Operation 242 [1/8] (6.00ns)   --->   "%tmp = fexp i32 @llvm.exp.f32, i32 %sum" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 242 'fexp' 'tmp' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 29 <SV = 21> <Delay = 6.01>
+ST_29 : Operation 243 [5/5] (6.01ns)   --->   "%add = fadd i32 %tmp, i32 1" [mlp_sigmoid.cpp:528]   --->   Operation 243 'fadd' 'add' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 22> <Delay = 6.01>
+ST_30 : Operation 244 [4/5] (6.01ns)   --->   "%add = fadd i32 %tmp, i32 1" [mlp_sigmoid.cpp:528]   --->   Operation 244 'fadd' 'add' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 23> <Delay = 6.01>
+ST_31 : Operation 245 [3/5] (6.01ns)   --->   "%add = fadd i32 %tmp, i32 1" [mlp_sigmoid.cpp:528]   --->   Operation 245 'fadd' 'add' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 24> <Delay = 6.01>
+ST_32 : Operation 246 [2/5] (6.01ns)   --->   "%add = fadd i32 %tmp, i32 1" [mlp_sigmoid.cpp:528]   --->   Operation 246 'fadd' 'add' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 25> <Delay = 6.01>
+ST_33 : Operation 247 [1/5] (6.01ns)   --->   "%add = fadd i32 %tmp, i32 1" [mlp_sigmoid.cpp:528]   --->   Operation 247 'fadd' 'add' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 26> <Delay = 6.70>
+ST_34 : Operation 248 [10/10] (6.70ns)   --->   "%div = fdiv i32 1, i32 %add" [mlp_sigmoid.cpp:528]   --->   Operation 248 'fdiv' 'div' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 35 <SV = 27> <Delay = 6.70>
+ST_35 : Operation 249 [9/10] (6.70ns)   --->   "%div = fdiv i32 1, i32 %add" [mlp_sigmoid.cpp:528]   --->   Operation 249 'fdiv' 'div' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 28> <Delay = 6.70>
+ST_36 : Operation 250 [8/10] (6.70ns)   --->   "%div = fdiv i32 1, i32 %add" [mlp_sigmoid.cpp:528]   --->   Operation 250 'fdiv' 'div' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 29> <Delay = 6.70>
+ST_37 : Operation 251 [7/10] (6.70ns)   --->   "%div = fdiv i32 1, i32 %add" [mlp_sigmoid.cpp:528]   --->   Operation 251 'fdiv' 'div' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 38 <SV = 30> <Delay = 6.70>
+ST_38 : Operation 252 [6/10] (6.70ns)   --->   "%div = fdiv i32 1, i32 %add" [mlp_sigmoid.cpp:528]   --->   Operation 252 'fdiv' 'div' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 39 <SV = 31> <Delay = 6.70>
+ST_39 : Operation 253 [5/10] (6.70ns)   --->   "%div = fdiv i32 1, i32 %add" [mlp_sigmoid.cpp:528]   --->   Operation 253 'fdiv' 'div' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 40 <SV = 32> <Delay = 6.70>
+ST_40 : Operation 254 [4/10] (6.70ns)   --->   "%div = fdiv i32 1, i32 %add" [mlp_sigmoid.cpp:528]   --->   Operation 254 'fdiv' 'div' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 41 <SV = 33> <Delay = 6.70>
+ST_41 : Operation 255 [3/10] (6.70ns)   --->   "%div = fdiv i32 1, i32 %add" [mlp_sigmoid.cpp:528]   --->   Operation 255 'fdiv' 'div' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 42 <SV = 34> <Delay = 6.70>
+ST_42 : Operation 256 [2/10] (6.70ns)   --->   "%div = fdiv i32 1, i32 %add" [mlp_sigmoid.cpp:528]   --->   Operation 256 'fdiv' 'div' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 43 <SV = 35> <Delay = 6.70>
+ST_43 : Operation 257 [1/10] (6.70ns)   --->   "%div = fdiv i32 1, i32 %add" [mlp_sigmoid.cpp:528]   --->   Operation 257 'fdiv' 'div' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 44 <SV = 36> <Delay = 1.35>
+ST_44 : Operation 258 [1/1] (0.00ns)   --->   "%zext_ln528 = zext i9 %add_ln528" [mlp_sigmoid.cpp:528]   --->   Operation 258 'zext' 'zext_ln528' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 259 [1/1] (0.00ns)   --->   "%Layer1_out_addr_2 = getelementptr i32 %Layer1_out, i64 0, i64 %zext_ln528" [mlp_sigmoid.cpp:528]   --->   Operation 259 'getelementptr' 'Layer1_out_addr_2' <Predicate = true> <Delay = 0.00>
+ST_44 : Operation 260 [1/1] (1.35ns)   --->   "%store_ln528 = store i32 %div, i9 %Layer1_out_addr_2" [mlp_sigmoid.cpp:528]   --->   Operation 260 'store' 'store_ln528' <Predicate = true> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 257> <RAM>
+ST_44 : Operation 261 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 261 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 45 <SV = 12> <Delay = 2.20>
+ST_45 : Operation 262 [1/1] (0.00ns)   --->   "%i_2 = phi i8 %add_ln545, void, i8 0, void" [mlp_sigmoid.cpp:545]   --->   Operation 262 'phi' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 263 [1/1] (0.90ns)   --->   "%add_ln545 = add i8 %i_2, i8 1" [mlp_sigmoid.cpp:545]   --->   Operation 263 'add' 'add_ln545' <Predicate = true> <Delay = 0.90> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 264 [1/1] (0.85ns)   --->   "%icmp_ln536 = icmp_eq  i8 %i_2, i8 128" [mlp_sigmoid.cpp:536]   --->   Operation 264 'icmp' 'icmp_ln536' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 265 [1/1] (0.00ns)   --->   "%empty_30 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 128, i64 128, i64 128"   --->   Operation 265 'speclooptripcount' 'empty_30' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 266 [1/1] (0.00ns)   --->   "%br_ln536 = br i1 %icmp_ln536, void %.split9, void" [mlp_sigmoid.cpp:536]   --->   Operation 266 'br' 'br_ln536' <Predicate = true> <Delay = 0.00>
+ST_45 : Operation 267 [1/1] (0.00ns)   --->   "%zext_ln540 = zext i8 %i_2" [mlp_sigmoid.cpp:540]   --->   Operation 267 'zext' 'zext_ln540' <Predicate = (!icmp_ln536)> <Delay = 0.00>
+ST_45 : Operation 268 [1/1] (0.00ns)   --->   "%specloopname_ln540 = specloopname void @_ssdm_op_SpecLoopName, void @empty_7" [mlp_sigmoid.cpp:540]   --->   Operation 268 'specloopname' 'specloopname_ln540' <Predicate = (!icmp_ln536)> <Delay = 0.00>
+ST_45 : Operation 269 [1/1] (0.48ns)   --->   "%br_ln541 = br void" [mlp_sigmoid.cpp:541]   --->   Operation 269 'br' 'br_ln541' <Predicate = (!icmp_ln536)> <Delay = 0.48>
+ST_45 : Operation 270 [1/1] (0.00ns)   --->   "%Layer2_out_addr_1 = getelementptr i32 %Layer2_out, i64 0, i64 0" [mlp_sigmoid.cpp:547]   --->   Operation 270 'getelementptr' 'Layer2_out_addr_1' <Predicate = (icmp_ln536)> <Delay = 0.00>
+ST_45 : Operation 271 [1/1] (1.35ns)   --->   "%store_ln547 = store i32 1, i8 %Layer2_out_addr_1" [mlp_sigmoid.cpp:547]   --->   Operation 271 'store' 'store_ln547' <Predicate = (icmp_ln536)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 129> <RAM>
+ST_45 : Operation 272 [1/1] (0.48ns)   --->   "%br_ln553 = br void" [mlp_sigmoid.cpp:553]   --->   Operation 272 'br' 'br_ln553' <Predicate = (icmp_ln536)> <Delay = 0.48>
+
+State 46 <SV = 13> <Delay = 2.36>
+ST_46 : Operation 273 [1/1] (0.00ns)   --->   "%j_1 = phi i9 %add_ln541, void %.split7, i9 0, void %.split9" [mlp_sigmoid.cpp:541]   --->   Operation 273 'phi' 'j_1' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 274 [1/1] (0.00ns)   --->   "%sum_2 = phi i32 %sum_3, void %.split7, i32 0, void %.split9"   --->   Operation 274 'phi' 'sum_2' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 275 [1/1] (0.92ns)   --->   "%add_ln541 = add i9 %j_1, i9 1" [mlp_sigmoid.cpp:541]   --->   Operation 275 'add' 'add_ln541' <Predicate = true> <Delay = 0.92> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 276 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 276 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 277 [1/1] (0.85ns)   --->   "%icmp_ln541 = icmp_eq  i9 %j_1, i9 257" [mlp_sigmoid.cpp:541]   --->   Operation 277 'icmp' 'icmp_ln541' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 278 [1/1] (0.00ns)   --->   "%empty_31 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 257, i64 257, i64 257"   --->   Operation 278 'speclooptripcount' 'empty_31' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 279 [1/1] (0.00ns)   --->   "%br_ln541 = br i1 %icmp_ln541, void %.split7, void" [mlp_sigmoid.cpp:541]   --->   Operation 279 'br' 'br_ln541' <Predicate = true> <Delay = 0.00>
+ST_46 : Operation 280 [1/1] (0.00ns)   --->   "%j_1_cast = zext i9 %j_1" [mlp_sigmoid.cpp:541]   --->   Operation 280 'zext' 'j_1_cast' <Predicate = (!icmp_ln541)> <Delay = 0.00>
+ST_46 : Operation 281 [1/1] (0.00ns)   --->   "%tmp_4 = bitconcatenate i16 @_ssdm_op_BitConcatenate.i16.i9.i7, i9 %j_1, i7 0" [mlp_sigmoid.cpp:542]   --->   Operation 281 'bitconcatenate' 'tmp_4' <Predicate = (!icmp_ln541)> <Delay = 0.00>
+ST_46 : Operation 282 [1/1] (1.01ns)   --->   "%add_ln542 = add i16 %tmp_4, i16 %zext_ln540" [mlp_sigmoid.cpp:542]   --->   Operation 282 'add' 'add_ln542' <Predicate = (!icmp_ln541)> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 283 [1/1] (0.00ns)   --->   "%zext_ln542 = zext i16 %add_ln542" [mlp_sigmoid.cpp:542]   --->   Operation 283 'zext' 'zext_ln542' <Predicate = (!icmp_ln541)> <Delay = 0.00>
+ST_46 : Operation 284 [1/1] (0.00ns)   --->   "%Layer1ToLayer2Weights_addr = getelementptr i32 %Layer1ToLayer2Weights, i64 0, i64 %zext_ln542" [mlp_sigmoid.cpp:542]   --->   Operation 284 'getelementptr' 'Layer1ToLayer2Weights_addr' <Predicate = (!icmp_ln541)> <Delay = 0.00>
+ST_46 : Operation 285 [2/2] (1.35ns)   --->   "%Layer1ToLayer2Weights_load = load i16 %Layer1ToLayer2Weights_addr" [mlp_sigmoid.cpp:542]   --->   Operation 285 'load' 'Layer1ToLayer2Weights_load' <Predicate = (!icmp_ln541)> <Delay = 1.35> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 32896> <ROM>
+ST_46 : Operation 286 [1/1] (0.00ns)   --->   "%Layer1_out_addr_3 = getelementptr i32 %Layer1_out, i64 0, i64 %j_1_cast" [mlp_sigmoid.cpp:542]   --->   Operation 286 'getelementptr' 'Layer1_out_addr_3' <Predicate = (!icmp_ln541)> <Delay = 0.00>
+ST_46 : Operation 287 [2/2] (1.35ns)   --->   "%Layer1_out_load = load i9 %Layer1_out_addr_3" [mlp_sigmoid.cpp:542]   --->   Operation 287 'load' 'Layer1_out_load' <Predicate = (!icmp_ln541)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 257> <RAM>
+
+State 47 <SV = 14> <Delay = 6.02>
+ST_47 : Operation 288 [1/2] (1.35ns)   --->   "%Layer1ToLayer2Weights_load = load i16 %Layer1ToLayer2Weights_addr" [mlp_sigmoid.cpp:542]   --->   Operation 288 'load' 'Layer1ToLayer2Weights_load' <Predicate = (!icmp_ln541)> <Delay = 1.35> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 32896> <ROM>
+ST_47 : Operation 289 [1/2] (1.35ns)   --->   "%Layer1_out_load = load i9 %Layer1_out_addr_3" [mlp_sigmoid.cpp:542]   --->   Operation 289 'load' 'Layer1_out_load' <Predicate = (!icmp_ln541)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 257> <RAM>
+ST_47 : Operation 290 [4/4] (4.67ns)   --->   "%mul1 = fmul i32 %Layer1ToLayer2Weights_load, i32 %Layer1_out_load" [mlp_sigmoid.cpp:542]   --->   Operation 290 'fmul' 'mul1' <Predicate = (!icmp_ln541)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 48 <SV = 15> <Delay = 4.67>
+ST_48 : Operation 291 [3/4] (4.67ns)   --->   "%mul1 = fmul i32 %Layer1ToLayer2Weights_load, i32 %Layer1_out_load" [mlp_sigmoid.cpp:542]   --->   Operation 291 'fmul' 'mul1' <Predicate = (!icmp_ln541)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 49 <SV = 16> <Delay = 4.67>
+ST_49 : Operation 292 [2/4] (4.67ns)   --->   "%mul1 = fmul i32 %Layer1ToLayer2Weights_load, i32 %Layer1_out_load" [mlp_sigmoid.cpp:542]   --->   Operation 292 'fmul' 'mul1' <Predicate = (!icmp_ln541)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 50 <SV = 17> <Delay = 4.67>
+ST_50 : Operation 293 [1/4] (4.67ns)   --->   "%mul1 = fmul i32 %Layer1ToLayer2Weights_load, i32 %Layer1_out_load" [mlp_sigmoid.cpp:542]   --->   Operation 293 'fmul' 'mul1' <Predicate = (!icmp_ln541)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 51 <SV = 18> <Delay = 6.34>
+ST_51 : Operation 294 [1/1] (0.85ns)   --->   "%icmp_ln542 = icmp_eq  i9 %add_ln541, i9 257" [mlp_sigmoid.cpp:542]   --->   Operation 294 'icmp' 'icmp_ln542' <Predicate = (!icmp_ln541)> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_51 : Operation 295 [3/3] (5.48ns)   --->   "%sum_3 = facc i32 @_ssdm_op_FACC, i32 %mul1, i1 %icmp_ln542" [mlp_sigmoid.cpp:542]   --->   Operation 295 'facc' 'sum_3' <Predicate = (!icmp_ln541)> <Delay = 5.48> <CoreInst = "FAcc_nodsp">   --->   Core 11 'FAcc_nodsp' <Latency = 2> <II = 1> <Delay = 5.48> <FuncUnit> <Opcode : 'facc'> <InPorts = 2> <OutPorts = 1>
+
+State 52 <SV = 19> <Delay = 5.48>
+ST_52 : Operation 296 [2/3] (5.48ns)   --->   "%sum_3 = facc i32 @_ssdm_op_FACC, i32 %mul1, i1 %icmp_ln542" [mlp_sigmoid.cpp:542]   --->   Operation 296 'facc' 'sum_3' <Predicate = (!icmp_ln541)> <Delay = 5.48> <CoreInst = "FAcc_nodsp">   --->   Core 11 'FAcc_nodsp' <Latency = 2> <II = 1> <Delay = 5.48> <FuncUnit> <Opcode : 'facc'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 20> <Delay = 5.48>
+ST_53 : Operation 297 [1/1] (0.00ns)   --->   "%specloopname_ln541 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11" [mlp_sigmoid.cpp:541]   --->   Operation 297 'specloopname' 'specloopname_ln541' <Predicate = (!icmp_ln541)> <Delay = 0.00>
+ST_53 : Operation 298 [1/3] (5.48ns)   --->   "%sum_3 = facc i32 @_ssdm_op_FACC, i32 %mul1, i1 %icmp_ln542" [mlp_sigmoid.cpp:542]   --->   Operation 298 'facc' 'sum_3' <Predicate = (!icmp_ln541)> <Delay = 5.48> <CoreInst = "FAcc_nodsp">   --->   Core 11 'FAcc_nodsp' <Latency = 2> <II = 1> <Delay = 5.48> <FuncUnit> <Opcode : 'facc'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 299 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 299 'br' 'br_ln0' <Predicate = (!icmp_ln541)> <Delay = 0.00>
+
+State 54 <SV = 14> <Delay = 6.00>
+ST_54 : Operation 300 [8/8] (6.00ns)   --->   "%tmp_1 = fexp i32 @llvm.exp.f32, i32 %sum_2" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 300 'fexp' 'tmp_1' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 55 <SV = 15> <Delay = 6.00>
+ST_55 : Operation 301 [7/8] (6.00ns)   --->   "%tmp_1 = fexp i32 @llvm.exp.f32, i32 %sum_2" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 301 'fexp' 'tmp_1' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 56 <SV = 16> <Delay = 6.00>
+ST_56 : Operation 302 [6/8] (6.00ns)   --->   "%tmp_1 = fexp i32 @llvm.exp.f32, i32 %sum_2" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 302 'fexp' 'tmp_1' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 57 <SV = 17> <Delay = 6.00>
+ST_57 : Operation 303 [5/8] (6.00ns)   --->   "%tmp_1 = fexp i32 @llvm.exp.f32, i32 %sum_2" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 303 'fexp' 'tmp_1' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 58 <SV = 18> <Delay = 6.00>
+ST_58 : Operation 304 [4/8] (6.00ns)   --->   "%tmp_1 = fexp i32 @llvm.exp.f32, i32 %sum_2" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 304 'fexp' 'tmp_1' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 59 <SV = 19> <Delay = 6.00>
+ST_59 : Operation 305 [3/8] (6.00ns)   --->   "%tmp_1 = fexp i32 @llvm.exp.f32, i32 %sum_2" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 305 'fexp' 'tmp_1' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 60 <SV = 20> <Delay = 6.00>
+ST_60 : Operation 306 [2/8] (6.00ns)   --->   "%tmp_1 = fexp i32 @llvm.exp.f32, i32 %sum_2" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 306 'fexp' 'tmp_1' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 61 <SV = 21> <Delay = 6.00>
+ST_61 : Operation 307 [1/8] (6.00ns)   --->   "%tmp_1 = fexp i32 @llvm.exp.f32, i32 %sum_2" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 307 'fexp' 'tmp_1' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 62 <SV = 22> <Delay = 6.01>
+ST_62 : Operation 308 [5/5] (6.01ns)   --->   "%add1 = fadd i32 %tmp_1, i32 1" [mlp_sigmoid.cpp:545]   --->   Operation 308 'fadd' 'add1' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 63 <SV = 23> <Delay = 6.01>
+ST_63 : Operation 309 [4/5] (6.01ns)   --->   "%add1 = fadd i32 %tmp_1, i32 1" [mlp_sigmoid.cpp:545]   --->   Operation 309 'fadd' 'add1' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 64 <SV = 24> <Delay = 6.01>
+ST_64 : Operation 310 [3/5] (6.01ns)   --->   "%add1 = fadd i32 %tmp_1, i32 1" [mlp_sigmoid.cpp:545]   --->   Operation 310 'fadd' 'add1' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 65 <SV = 25> <Delay = 6.01>
+ST_65 : Operation 311 [2/5] (6.01ns)   --->   "%add1 = fadd i32 %tmp_1, i32 1" [mlp_sigmoid.cpp:545]   --->   Operation 311 'fadd' 'add1' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 66 <SV = 26> <Delay = 6.01>
+ST_66 : Operation 312 [1/5] (6.01ns)   --->   "%add1 = fadd i32 %tmp_1, i32 1" [mlp_sigmoid.cpp:545]   --->   Operation 312 'fadd' 'add1' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 67 <SV = 27> <Delay = 6.70>
+ST_67 : Operation 313 [10/10] (6.70ns)   --->   "%div1 = fdiv i32 1, i32 %add1" [mlp_sigmoid.cpp:545]   --->   Operation 313 'fdiv' 'div1' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 68 <SV = 28> <Delay = 6.70>
+ST_68 : Operation 314 [9/10] (6.70ns)   --->   "%div1 = fdiv i32 1, i32 %add1" [mlp_sigmoid.cpp:545]   --->   Operation 314 'fdiv' 'div1' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 69 <SV = 29> <Delay = 6.70>
+ST_69 : Operation 315 [8/10] (6.70ns)   --->   "%div1 = fdiv i32 1, i32 %add1" [mlp_sigmoid.cpp:545]   --->   Operation 315 'fdiv' 'div1' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 70 <SV = 30> <Delay = 6.70>
+ST_70 : Operation 316 [7/10] (6.70ns)   --->   "%div1 = fdiv i32 1, i32 %add1" [mlp_sigmoid.cpp:545]   --->   Operation 316 'fdiv' 'div1' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 71 <SV = 31> <Delay = 6.70>
+ST_71 : Operation 317 [6/10] (6.70ns)   --->   "%div1 = fdiv i32 1, i32 %add1" [mlp_sigmoid.cpp:545]   --->   Operation 317 'fdiv' 'div1' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 72 <SV = 32> <Delay = 6.70>
+ST_72 : Operation 318 [5/10] (6.70ns)   --->   "%div1 = fdiv i32 1, i32 %add1" [mlp_sigmoid.cpp:545]   --->   Operation 318 'fdiv' 'div1' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 73 <SV = 33> <Delay = 6.70>
+ST_73 : Operation 319 [4/10] (6.70ns)   --->   "%div1 = fdiv i32 1, i32 %add1" [mlp_sigmoid.cpp:545]   --->   Operation 319 'fdiv' 'div1' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 74 <SV = 34> <Delay = 6.70>
+ST_74 : Operation 320 [3/10] (6.70ns)   --->   "%div1 = fdiv i32 1, i32 %add1" [mlp_sigmoid.cpp:545]   --->   Operation 320 'fdiv' 'div1' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 75 <SV = 35> <Delay = 6.70>
+ST_75 : Operation 321 [2/10] (6.70ns)   --->   "%div1 = fdiv i32 1, i32 %add1" [mlp_sigmoid.cpp:545]   --->   Operation 321 'fdiv' 'div1' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 76 <SV = 36> <Delay = 6.70>
+ST_76 : Operation 322 [1/10] (6.70ns)   --->   "%div1 = fdiv i32 1, i32 %add1" [mlp_sigmoid.cpp:545]   --->   Operation 322 'fdiv' 'div1' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 77 <SV = 37> <Delay = 1.35>
+ST_77 : Operation 323 [1/1] (0.00ns)   --->   "%zext_ln545 = zext i8 %add_ln545" [mlp_sigmoid.cpp:545]   --->   Operation 323 'zext' 'zext_ln545' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 324 [1/1] (0.00ns)   --->   "%Layer2_out_addr_2 = getelementptr i32 %Layer2_out, i64 0, i64 %zext_ln545" [mlp_sigmoid.cpp:545]   --->   Operation 324 'getelementptr' 'Layer2_out_addr_2' <Predicate = true> <Delay = 0.00>
+ST_77 : Operation 325 [1/1] (1.35ns)   --->   "%store_ln545 = store i32 %div1, i8 %Layer2_out_addr_2" [mlp_sigmoid.cpp:545]   --->   Operation 325 'store' 'store_ln545' <Predicate = true> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 129> <RAM>
+ST_77 : Operation 326 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 326 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 78 <SV = 13> <Delay = 0.88>
+ST_78 : Operation 327 [1/1] (0.00ns)   --->   "%i_3 = phi i4 %add_ln553, void, i4 0, void" [mlp_sigmoid.cpp:553]   --->   Operation 327 'phi' 'i_3' <Predicate = true> <Delay = 0.00>
+ST_78 : Operation 328 [1/1] (0.86ns)   --->   "%add_ln553 = add i4 %i_3, i4 1" [mlp_sigmoid.cpp:553]   --->   Operation 328 'add' 'add_ln553' <Predicate = true> <Delay = 0.86> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_78 : Operation 329 [1/1] (0.88ns)   --->   "%icmp_ln553 = icmp_eq  i4 %i_3, i4 9" [mlp_sigmoid.cpp:553]   --->   Operation 329 'icmp' 'icmp_ln553' <Predicate = true> <Delay = 0.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_78 : Operation 330 [1/1] (0.00ns)   --->   "%empty_32 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 9, i64 9, i64 9"   --->   Operation 330 'speclooptripcount' 'empty_32' <Predicate = true> <Delay = 0.00>
+ST_78 : Operation 331 [1/1] (0.00ns)   --->   "%br_ln553 = br i1 %icmp_ln553, void %.split5, void %.preheader.preheader" [mlp_sigmoid.cpp:553]   --->   Operation 331 'br' 'br_ln553' <Predicate = true> <Delay = 0.00>
+ST_78 : Operation 332 [1/1] (0.00ns)   --->   "%zext_ln553 = zext i4 %i_3" [mlp_sigmoid.cpp:553]   --->   Operation 332 'zext' 'zext_ln553' <Predicate = (!icmp_ln553)> <Delay = 0.00>
+ST_78 : Operation 333 [1/1] (0.00ns)   --->   "%zext_ln556 = zext i4 %i_3" [mlp_sigmoid.cpp:556]   --->   Operation 333 'zext' 'zext_ln556' <Predicate = (!icmp_ln553)> <Delay = 0.00>
+ST_78 : Operation 334 [1/1] (0.00ns)   --->   "%specloopname_ln556 = specloopname void @_ssdm_op_SpecLoopName, void @empty_6" [mlp_sigmoid.cpp:556]   --->   Operation 334 'specloopname' 'specloopname_ln556' <Predicate = (!icmp_ln553)> <Delay = 0.00>
+ST_78 : Operation 335 [1/1] (0.48ns)   --->   "%br_ln557 = br void" [mlp_sigmoid.cpp:557]   --->   Operation 335 'br' 'br_ln557' <Predicate = (!icmp_ln553)> <Delay = 0.48>
+ST_78 : Operation 336 [1/1] (0.48ns)   --->   "%br_ln0 = br void %.preheader"   --->   Operation 336 'br' 'br_ln0' <Predicate = (icmp_ln553)> <Delay = 0.48>
+
+State 79 <SV = 14> <Delay = 2.42>
+ST_79 : Operation 337 [1/1] (0.00ns)   --->   "%j_2 = phi i8 %add_ln557, void %.split3, i8 0, void %.split5" [mlp_sigmoid.cpp:557]   --->   Operation 337 'phi' 'j_2' <Predicate = true> <Delay = 0.00>
+ST_79 : Operation 338 [1/1] (0.00ns)   --->   "%sum_4 = phi i32 %sum_5, void %.split3, i32 0, void %.split5"   --->   Operation 338 'phi' 'sum_4' <Predicate = true> <Delay = 0.00>
+ST_79 : Operation 339 [1/1] (0.90ns)   --->   "%add_ln557 = add i8 %j_2, i8 1" [mlp_sigmoid.cpp:557]   --->   Operation 339 'add' 'add_ln557' <Predicate = true> <Delay = 0.90> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_79 : Operation 340 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 340 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_79 : Operation 341 [1/1] (0.85ns)   --->   "%icmp_ln557 = icmp_eq  i8 %j_2, i8 129" [mlp_sigmoid.cpp:557]   --->   Operation 341 'icmp' 'icmp_ln557' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_79 : Operation 342 [1/1] (0.00ns)   --->   "%empty_33 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 129, i64 129, i64 129"   --->   Operation 342 'speclooptripcount' 'empty_33' <Predicate = true> <Delay = 0.00>
+ST_79 : Operation 343 [1/1] (0.00ns)   --->   "%br_ln557 = br i1 %icmp_ln557, void %.split3, void" [mlp_sigmoid.cpp:557]   --->   Operation 343 'br' 'br_ln557' <Predicate = true> <Delay = 0.00>
+ST_79 : Operation 344 [1/1] (0.00ns)   --->   "%j_2_cast = zext i8 %j_2" [mlp_sigmoid.cpp:557]   --->   Operation 344 'zext' 'j_2_cast' <Predicate = (!icmp_ln557)> <Delay = 0.00>
+ST_79 : Operation 345 [1/1] (0.00ns)   --->   "%zext_ln559 = zext i8 %j_2" [mlp_sigmoid.cpp:559]   --->   Operation 345 'zext' 'zext_ln559' <Predicate = (!icmp_ln557)> <Delay = 0.00>
+ST_79 : Operation 346 [1/1] (0.00ns)   --->   "%tmp_5 = bitconcatenate i11 @_ssdm_op_BitConcatenate.i11.i8.i3, i8 %j_2, i3 0" [mlp_sigmoid.cpp:559]   --->   Operation 346 'bitconcatenate' 'tmp_5' <Predicate = (!icmp_ln557)> <Delay = 0.00>
+ST_79 : Operation 347 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln559 = add i11 %tmp_5, i11 %zext_ln559" [mlp_sigmoid.cpp:559]   --->   Operation 347 'add' 'add_ln559' <Predicate = (!icmp_ln557)> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
+ST_79 : Operation 348 [1/1] (1.07ns) (root node of TernaryAdder)   --->   "%add_ln559_1 = add i11 %add_ln559, i11 %zext_ln556" [mlp_sigmoid.cpp:559]   --->   Operation 348 'add' 'add_ln559_1' <Predicate = (!icmp_ln557)> <Delay = 1.07> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync>
+ST_79 : Operation 349 [1/1] (0.00ns)   --->   "%zext_ln559_1 = zext i11 %add_ln559_1" [mlp_sigmoid.cpp:559]   --->   Operation 349 'zext' 'zext_ln559_1' <Predicate = (!icmp_ln557)> <Delay = 0.00>
+ST_79 : Operation 350 [1/1] (0.00ns)   --->   "%Layer2ToOutputWeights_addr = getelementptr i32 %Layer2ToOutputWeights, i64 0, i64 %zext_ln559_1" [mlp_sigmoid.cpp:559]   --->   Operation 350 'getelementptr' 'Layer2ToOutputWeights_addr' <Predicate = (!icmp_ln557)> <Delay = 0.00>
+ST_79 : Operation 351 [2/2] (1.35ns)   --->   "%Layer2ToOutputWeights_load = load i11 %Layer2ToOutputWeights_addr" [mlp_sigmoid.cpp:559]   --->   Operation 351 'load' 'Layer2ToOutputWeights_load' <Predicate = (!icmp_ln557)> <Delay = 1.35> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 1161> <ROM>
+ST_79 : Operation 352 [1/1] (0.00ns)   --->   "%Layer2_out_addr_3 = getelementptr i32 %Layer2_out, i64 0, i64 %j_2_cast" [mlp_sigmoid.cpp:559]   --->   Operation 352 'getelementptr' 'Layer2_out_addr_3' <Predicate = (!icmp_ln557)> <Delay = 0.00>
+ST_79 : Operation 353 [2/2] (1.35ns)   --->   "%Layer2_out_load = load i8 %Layer2_out_addr_3" [mlp_sigmoid.cpp:559]   --->   Operation 353 'load' 'Layer2_out_load' <Predicate = (!icmp_ln557)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 129> <RAM>
+
+State 80 <SV = 15> <Delay = 6.02>
+ST_80 : Operation 354 [1/2] (1.35ns)   --->   "%Layer2ToOutputWeights_load = load i11 %Layer2ToOutputWeights_addr" [mlp_sigmoid.cpp:559]   --->   Operation 354 'load' 'Layer2ToOutputWeights_load' <Predicate = (!icmp_ln557)> <Delay = 1.35> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 32> <Depth = 1161> <ROM>
+ST_80 : Operation 355 [1/2] (1.35ns)   --->   "%Layer2_out_load = load i8 %Layer2_out_addr_3" [mlp_sigmoid.cpp:559]   --->   Operation 355 'load' 'Layer2_out_load' <Predicate = (!icmp_ln557)> <Delay = 1.35> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.35> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 129> <RAM>
+ST_80 : Operation 356 [4/4] (4.67ns)   --->   "%mul2 = fmul i32 %Layer2ToOutputWeights_load, i32 %Layer2_out_load" [mlp_sigmoid.cpp:559]   --->   Operation 356 'fmul' 'mul2' <Predicate = (!icmp_ln557)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 81 <SV = 16> <Delay = 4.67>
+ST_81 : Operation 357 [3/4] (4.67ns)   --->   "%mul2 = fmul i32 %Layer2ToOutputWeights_load, i32 %Layer2_out_load" [mlp_sigmoid.cpp:559]   --->   Operation 357 'fmul' 'mul2' <Predicate = (!icmp_ln557)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 82 <SV = 17> <Delay = 4.67>
+ST_82 : Operation 358 [2/4] (4.67ns)   --->   "%mul2 = fmul i32 %Layer2ToOutputWeights_load, i32 %Layer2_out_load" [mlp_sigmoid.cpp:559]   --->   Operation 358 'fmul' 'mul2' <Predicate = (!icmp_ln557)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 83 <SV = 18> <Delay = 4.67>
+ST_83 : Operation 359 [1/4] (4.67ns)   --->   "%mul2 = fmul i32 %Layer2ToOutputWeights_load, i32 %Layer2_out_load" [mlp_sigmoid.cpp:559]   --->   Operation 359 'fmul' 'mul2' <Predicate = (!icmp_ln557)> <Delay = 4.67> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 4.67> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 84 <SV = 19> <Delay = 6.34>
+ST_84 : Operation 360 [1/1] (0.85ns)   --->   "%icmp_ln559 = icmp_eq  i8 %add_ln557, i8 129" [mlp_sigmoid.cpp:559]   --->   Operation 360 'icmp' 'icmp_ln559' <Predicate = (!icmp_ln557)> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_84 : Operation 361 [3/3] (5.48ns)   --->   "%sum_5 = facc i32 @_ssdm_op_FACC, i32 %mul2, i1 %icmp_ln559" [mlp_sigmoid.cpp:559]   --->   Operation 361 'facc' 'sum_5' <Predicate = (!icmp_ln557)> <Delay = 5.48> <CoreInst = "FAcc_nodsp">   --->   Core 11 'FAcc_nodsp' <Latency = 2> <II = 1> <Delay = 5.48> <FuncUnit> <Opcode : 'facc'> <InPorts = 2> <OutPorts = 1>
+
+State 85 <SV = 20> <Delay = 5.48>
+ST_85 : Operation 362 [2/3] (5.48ns)   --->   "%sum_5 = facc i32 @_ssdm_op_FACC, i32 %mul2, i1 %icmp_ln559" [mlp_sigmoid.cpp:559]   --->   Operation 362 'facc' 'sum_5' <Predicate = (!icmp_ln557)> <Delay = 5.48> <CoreInst = "FAcc_nodsp">   --->   Core 11 'FAcc_nodsp' <Latency = 2> <II = 1> <Delay = 5.48> <FuncUnit> <Opcode : 'facc'> <InPorts = 2> <OutPorts = 1>
+
+State 86 <SV = 21> <Delay = 5.48>
+ST_86 : Operation 363 [1/1] (0.00ns)   --->   "%specloopname_ln556 = specloopname void @_ssdm_op_SpecLoopName, void @empty_9" [mlp_sigmoid.cpp:556]   --->   Operation 363 'specloopname' 'specloopname_ln556' <Predicate = (!icmp_ln557)> <Delay = 0.00>
+ST_86 : Operation 364 [1/3] (5.48ns)   --->   "%sum_5 = facc i32 @_ssdm_op_FACC, i32 %mul2, i1 %icmp_ln559" [mlp_sigmoid.cpp:559]   --->   Operation 364 'facc' 'sum_5' <Predicate = (!icmp_ln557)> <Delay = 5.48> <CoreInst = "FAcc_nodsp">   --->   Core 11 'FAcc_nodsp' <Latency = 2> <II = 1> <Delay = 5.48> <FuncUnit> <Opcode : 'facc'> <InPorts = 2> <OutPorts = 1>
+ST_86 : Operation 365 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 365 'br' 'br_ln0' <Predicate = (!icmp_ln557)> <Delay = 0.00>
+
+State 87 <SV = 15> <Delay = 6.00>
+ST_87 : Operation 366 [8/8] (6.00ns)   --->   "%tmp_2 = fexp i32 @llvm.exp.f32, i32 %sum_4" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 366 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 88 <SV = 16> <Delay = 6.00>
+ST_88 : Operation 367 [7/8] (6.00ns)   --->   "%tmp_2 = fexp i32 @llvm.exp.f32, i32 %sum_4" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 367 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 89 <SV = 17> <Delay = 6.00>
+ST_89 : Operation 368 [6/8] (6.00ns)   --->   "%tmp_2 = fexp i32 @llvm.exp.f32, i32 %sum_4" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 368 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 90 <SV = 18> <Delay = 6.00>
+ST_90 : Operation 369 [5/8] (6.00ns)   --->   "%tmp_2 = fexp i32 @llvm.exp.f32, i32 %sum_4" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 369 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 91 <SV = 19> <Delay = 6.00>
+ST_91 : Operation 370 [4/8] (6.00ns)   --->   "%tmp_2 = fexp i32 @llvm.exp.f32, i32 %sum_4" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 370 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 92 <SV = 20> <Delay = 6.00>
+ST_92 : Operation 371 [3/8] (6.00ns)   --->   "%tmp_2 = fexp i32 @llvm.exp.f32, i32 %sum_4" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 371 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 93 <SV = 21> <Delay = 6.00>
+ST_93 : Operation 372 [2/8] (6.00ns)   --->   "%tmp_2 = fexp i32 @llvm.exp.f32, i32 %sum_4" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 372 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 94 <SV = 22> <Delay = 6.00>
+ST_94 : Operation 373 [1/8] (6.00ns)   --->   "%tmp_2 = fexp i32 @llvm.exp.f32, i32 %sum_4" [/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246]   --->   Operation 373 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.00> <CoreInst = "FExp_fulldsp">   --->   Core 23 'FExp_fulldsp' <Latency = 7> <II = 1> <Delay = 6.00> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 95 <SV = 23> <Delay = 6.01>
+ST_95 : Operation 374 [5/5] (6.01ns)   --->   "%add2 = fadd i32 %tmp_2, i32 1" [mlp_sigmoid.cpp:562]   --->   Operation 374 'fadd' 'add2' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 96 <SV = 24> <Delay = 6.01>
+ST_96 : Operation 375 [4/5] (6.01ns)   --->   "%add2 = fadd i32 %tmp_2, i32 1" [mlp_sigmoid.cpp:562]   --->   Operation 375 'fadd' 'add2' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 97 <SV = 25> <Delay = 6.01>
+ST_97 : Operation 376 [3/5] (6.01ns)   --->   "%add2 = fadd i32 %tmp_2, i32 1" [mlp_sigmoid.cpp:562]   --->   Operation 376 'fadd' 'add2' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 98 <SV = 26> <Delay = 6.01>
+ST_98 : Operation 377 [2/5] (6.01ns)   --->   "%add2 = fadd i32 %tmp_2, i32 1" [mlp_sigmoid.cpp:562]   --->   Operation 377 'fadd' 'add2' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 99 <SV = 27> <Delay = 6.01>
+ST_99 : Operation 378 [1/5] (6.01ns)   --->   "%add2 = fadd i32 %tmp_2, i32 1" [mlp_sigmoid.cpp:562]   --->   Operation 378 'fadd' 'add2' <Predicate = true> <Delay = 6.01> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 6.01> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 100 <SV = 28> <Delay = 6.70>
+ST_100 : Operation 379 [10/10] (6.70ns)   --->   "%div2 = fdiv i32 1, i32 %add2" [mlp_sigmoid.cpp:562]   --->   Operation 379 'fdiv' 'div2' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 101 <SV = 29> <Delay = 6.70>
+ST_101 : Operation 380 [9/10] (6.70ns)   --->   "%div2 = fdiv i32 1, i32 %add2" [mlp_sigmoid.cpp:562]   --->   Operation 380 'fdiv' 'div2' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 102 <SV = 30> <Delay = 6.70>
+ST_102 : Operation 381 [8/10] (6.70ns)   --->   "%div2 = fdiv i32 1, i32 %add2" [mlp_sigmoid.cpp:562]   --->   Operation 381 'fdiv' 'div2' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 103 <SV = 31> <Delay = 6.70>
+ST_103 : Operation 382 [7/10] (6.70ns)   --->   "%div2 = fdiv i32 1, i32 %add2" [mlp_sigmoid.cpp:562]   --->   Operation 382 'fdiv' 'div2' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 104 <SV = 32> <Delay = 6.70>
+ST_104 : Operation 383 [6/10] (6.70ns)   --->   "%div2 = fdiv i32 1, i32 %add2" [mlp_sigmoid.cpp:562]   --->   Operation 383 'fdiv' 'div2' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 105 <SV = 33> <Delay = 6.70>
+ST_105 : Operation 384 [5/10] (6.70ns)   --->   "%div2 = fdiv i32 1, i32 %add2" [mlp_sigmoid.cpp:562]   --->   Operation 384 'fdiv' 'div2' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 106 <SV = 34> <Delay = 6.70>
+ST_106 : Operation 385 [4/10] (6.70ns)   --->   "%div2 = fdiv i32 1, i32 %add2" [mlp_sigmoid.cpp:562]   --->   Operation 385 'fdiv' 'div2' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 107 <SV = 35> <Delay = 6.70>
+ST_107 : Operation 386 [3/10] (6.70ns)   --->   "%div2 = fdiv i32 1, i32 %add2" [mlp_sigmoid.cpp:562]   --->   Operation 386 'fdiv' 'div2' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 108 <SV = 36> <Delay = 6.70>
+ST_108 : Operation 387 [2/10] (6.70ns)   --->   "%div2 = fdiv i32 1, i32 %add2" [mlp_sigmoid.cpp:562]   --->   Operation 387 'fdiv' 'div2' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 109 <SV = 37> <Delay = 6.70>
+ST_109 : Operation 388 [1/10] (6.70ns)   --->   "%div2 = fdiv i32 1, i32 %add2" [mlp_sigmoid.cpp:562]   --->   Operation 388 'fdiv' 'div2' <Predicate = true> <Delay = 6.70> <CoreInst = "FDiv">   --->   Core 20 'FDiv' <Latency = 9> <II = 1> <Delay = 6.70> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 110 <SV = 38> <Delay = 0.79>
+ST_110 : Operation 389 [1/1] (0.00ns)   --->   "%Out_layer_addr_2 = getelementptr i32 %Out_layer, i64 0, i64 %zext_ln553" [mlp_sigmoid.cpp:562]   --->   Operation 389 'getelementptr' 'Out_layer_addr_2' <Predicate = true> <Delay = 0.00>
+ST_110 : Operation 390 [1/1] (0.79ns)   --->   "%store_ln562 = store i32 %div2, i4 %Out_layer_addr_2" [mlp_sigmoid.cpp:562]   --->   Operation 390 'store' 'store_ln562' <Predicate = true> <Delay = 0.79> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_110 : Operation 391 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 391 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 111 <SV = 14> <Delay = 0.88>
+ST_111 : Operation 392 [1/1] (0.00ns)   --->   "%i_4 = phi i4 %add_ln565, void %.split, i4 0, void %.preheader.preheader" [mlp_sigmoid.cpp:565]   --->   Operation 392 'phi' 'i_4' <Predicate = true> <Delay = 0.00>
+ST_111 : Operation 393 [1/1] (0.86ns)   --->   "%add_ln565 = add i4 %i_4, i4 1" [mlp_sigmoid.cpp:565]   --->   Operation 393 'add' 'add_ln565' <Predicate = true> <Delay = 0.86> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.86> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_111 : Operation 394 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 394 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_111 : Operation 395 [1/1] (0.88ns)   --->   "%icmp_ln565 = icmp_eq  i4 %i_4, i4 9" [mlp_sigmoid.cpp:565]   --->   Operation 395 'icmp' 'icmp_ln565' <Predicate = true> <Delay = 0.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_111 : Operation 396 [1/1] (0.00ns)   --->   "%empty_34 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 9, i64 9, i64 9"   --->   Operation 396 'speclooptripcount' 'empty_34' <Predicate = true> <Delay = 0.00>
+ST_111 : Operation 397 [1/1] (0.00ns)   --->   "%br_ln565 = br i1 %icmp_ln565, void %.split, void" [mlp_sigmoid.cpp:565]   --->   Operation 397 'br' 'br_ln565' <Predicate = true> <Delay = 0.00>
+ST_111 : Operation 398 [1/1] (0.00ns)   --->   "%i_4_cast = zext i4 %i_4" [mlp_sigmoid.cpp:565]   --->   Operation 398 'zext' 'i_4_cast' <Predicate = (!icmp_ln565)> <Delay = 0.00>
+ST_111 : Operation 399 [1/1] (0.00ns)   --->   "%Out_layer_addr_1 = getelementptr i32 %Out_layer, i64 0, i64 %i_4_cast" [mlp_sigmoid.cpp:567]   --->   Operation 399 'getelementptr' 'Out_layer_addr_1' <Predicate = (!icmp_ln565)> <Delay = 0.00>
+ST_111 : Operation 400 [2/2] (0.79ns)   --->   "%out_converter = load i4 %Out_layer_addr_1" [mlp_sigmoid.cpp:567]   --->   Operation 400 'load' 'out_converter' <Predicate = (!icmp_ln565)> <Delay = 0.79> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_111 : Operation 401 [1/1] (0.88ns)   --->   "%temp_last_V = icmp_eq  i4 %i_4, i4 8" [mlp_sigmoid.cpp:571]   --->   Operation 401 'icmp' 'temp_last_V' <Predicate = (!icmp_ln565)> <Delay = 0.88> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 112 <SV = 15> <Delay = 0.79>
+ST_112 : Operation 402 [1/2] (0.79ns)   --->   "%out_converter = load i4 %Out_layer_addr_1" [mlp_sigmoid.cpp:567]   --->   Operation 402 'load' 'out_converter' <Predicate = (!icmp_ln565)> <Delay = 0.79> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.79> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_112 : Operation 403 [1/1] (0.00ns)   --->   "%temp_data_V = bitcast i32 %out_converter" [mlp_sigmoid.cpp:568]   --->   Operation 403 'bitcast' 'temp_data_V' <Predicate = (!icmp_ln565)> <Delay = 0.00>
+ST_112 : Operation 404 [2/2] (0.00ns)   --->   "%write_ln304 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %M_AXIS_V_data_V, i4 %M_AXIS_V_keep_V, i4 %M_AXIS_V_strb_V, i1 %M_AXIS_V_last_V, i32 %temp_data_V, i4 %p_phi, i4 %p_phi17, i1 %temp_last_V"   --->   Operation 404 'write' 'write_ln304' <Predicate = (!icmp_ln565)> <Delay = 0.00> <CoreInst = "axis">   --->   Core 123 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+
+State 113 <SV = 16> <Delay = 0.00>
+ST_113 : Operation 405 [1/1] (0.00ns)   --->   "%specloopname_ln565 = specloopname void @_ssdm_op_SpecLoopName, void @empty_4" [mlp_sigmoid.cpp:565]   --->   Operation 405 'specloopname' 'specloopname_ln565' <Predicate = (!icmp_ln565)> <Delay = 0.00>
+ST_113 : Operation 406 [1/2] (0.00ns)   --->   "%write_ln304 = write void @_ssdm_op_Write.axis.volatile.i32P0A.i4P0A.i4P0A.i1P0A, i32 %M_AXIS_V_data_V, i4 %M_AXIS_V_keep_V, i4 %M_AXIS_V_strb_V, i1 %M_AXIS_V_last_V, i32 %temp_data_V, i4 %p_phi, i4 %p_phi17, i1 %temp_last_V"   --->   Operation 406 'write' 'write_ln304' <Predicate = (!icmp_ln565)> <Delay = 0.00> <CoreInst = "axis">   --->   Core 123 'axis' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : >
+ST_113 : Operation 407 [1/1] (0.00ns)   --->   "%br_ln0 = br void %.preheader"   --->   Operation 407 'br' 'br_ln0' <Predicate = (!icmp_ln565)> <Delay = 0.00>
+
+State 114 <SV = 15> <Delay = 0.00>
+ST_114 : Operation 408 [1/1] (0.00ns)   --->   "%ret_ln597 = ret" [mlp_sigmoid.cpp:597]   --->   Operation 408 'ret' 'ret_ln597' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0.489ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('empty') with incoming values : ('empty_15') [33]  (0.489 ns)
+
+ <State 2>: 2.21ns
+The critical path consists of the following:
+	'phi' operation ('empty') with incoming values : ('empty_15') [33]  (0 ns)
+	'getelementptr' operation ('Layer1_out_addr') [41]  (0 ns)
+	'store' operation ('store_ln0') of constant 0 on array 'Layer1_out', mlp_sigmoid.cpp:494 [42]  (1.35 ns)
+	blocking operation 0.857 ns on control path)
+
+ <State 3>: 0.489ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('empty_17') with incoming values : ('empty_18') [47]  (0.489 ns)
+
+ <State 4>: 2.21ns
+The critical path consists of the following:
+	'phi' operation ('empty_17') with incoming values : ('empty_18') [47]  (0 ns)
+	'getelementptr' operation ('Layer2_out_addr') [55]  (0 ns)
+	'store' operation ('store_ln0') of constant 0 on array 'Layer2_out', mlp_sigmoid.cpp:495 [56]  (1.35 ns)
+	blocking operation 0.856 ns on control path)
+
+ <State 5>: 0.489ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('empty_20') with incoming values : ('empty_21') [61]  (0.489 ns)
+
+ <State 6>: 1.67ns
+The critical path consists of the following:
+	'phi' operation ('empty_20') with incoming values : ('empty_21') [61]  (0 ns)
+	'icmp' operation ('exitcond10819') [64]  (0.884 ns)
+	blocking operation 0.79 ns on control path)
+
+ <State 7>: 0.489ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('empty_23') with incoming values : ('empty_24') [75]  (0.489 ns)
+
+ <State 8>: 2.21ns
+The critical path consists of the following:
+	'phi' operation ('empty_23') with incoming values : ('empty_24') [75]  (0 ns)
+	'getelementptr' operation ('incoming_inputs_addr') [83]  (0 ns)
+	'store' operation ('store_ln0') of constant 0 on array 'incoming_inputs', mlp_sigmoid.cpp:497 [84]  (1.35 ns)
+	blocking operation 0.863 ns on control path)
+
+ <State 9>: 0.489ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i', mlp_sigmoid.cpp:500) with incoming values : ('add_ln500', mlp_sigmoid.cpp:500) [89]  (0.489 ns)
+
+ <State 10>: 2.21ns
+The critical path consists of the following:
+	'phi' operation ('i', mlp_sigmoid.cpp:500) with incoming values : ('add_ln500', mlp_sigmoid.cpp:500) [89]  (0 ns)
+	'getelementptr' operation ('incoming_inputs_addr_2', mlp_sigmoid.cpp:504) [105]  (0 ns)
+	'store' operation ('store_ln504', mlp_sigmoid.cpp:504) of variable 'bitcast_ln504', mlp_sigmoid.cpp:504 on array 'incoming_inputs', mlp_sigmoid.cpp:497 [106]  (1.35 ns)
+	blocking operation 0.863 ns on control path)
+
+ <State 11>: 1.35ns
+The critical path consists of the following:
+	'getelementptr' operation ('incoming_inputs_addr_1', mlp_sigmoid.cpp:509) [109]  (0 ns)
+	'store' operation ('store_ln509', mlp_sigmoid.cpp:509) of constant 1 on array 'incoming_inputs', mlp_sigmoid.cpp:497 [110]  (1.35 ns)
+
+ <State 12>: 2.21ns
+The critical path consists of the following:
+	'getelementptr' operation ('Layer1_out_addr_1', mlp_sigmoid.cpp:531) [153]  (0 ns)
+	'store' operation ('store_ln531', mlp_sigmoid.cpp:531) of constant 1 on array 'Layer1_out', mlp_sigmoid.cpp:494 [154]  (1.35 ns)
+	blocking operation 0.857 ns on control path)
+
+ <State 13>: 2.35ns
+The critical path consists of the following:
+	'phi' operation ('j', mlp_sigmoid.cpp:523) with incoming values : ('add_ln523', mlp_sigmoid.cpp:523) [123]  (0 ns)
+	'add' operation ('add_ln525', mlp_sigmoid.cpp:525) [133]  (1 ns)
+	'getelementptr' operation ('InputToLayer1Weights_addr', mlp_sigmoid.cpp:525) [135]  (0 ns)
+	'load' operation ('InputToLayer1Weights_load', mlp_sigmoid.cpp:525) on array 'InputToLayer1Weights' [137]  (1.35 ns)
+
+ <State 14>: 6.02ns
+The critical path consists of the following:
+	'load' operation ('InputToLayer1Weights_load', mlp_sigmoid.cpp:525) on array 'InputToLayer1Weights' [137]  (1.35 ns)
+	'fmul' operation ('mul', mlp_sigmoid.cpp:525) [140]  (4.67 ns)
+
+ <State 15>: 4.67ns
+The critical path consists of the following:
+	'fmul' operation ('mul', mlp_sigmoid.cpp:525) [140]  (4.67 ns)
+
+ <State 16>: 4.67ns
+The critical path consists of the following:
+	'fmul' operation ('mul', mlp_sigmoid.cpp:525) [140]  (4.67 ns)
+
+ <State 17>: 4.67ns
+The critical path consists of the following:
+	'fmul' operation ('mul', mlp_sigmoid.cpp:525) [140]  (4.67 ns)
+
+ <State 18>: 6.35ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln525', mlp_sigmoid.cpp:525) [141]  (0.863 ns)
+	'facc' operation ('sum', mlp_sigmoid.cpp:525) [142]  (5.48 ns)
+
+ <State 19>: 5.48ns
+The critical path consists of the following:
+	'facc' operation ('sum', mlp_sigmoid.cpp:525) [142]  (5.48 ns)
+
+ <State 20>: 5.48ns
+The critical path consists of the following:
+	'facc' operation ('sum', mlp_sigmoid.cpp:525) [142]  (5.48 ns)
+
+ <State 21>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [145]  (6 ns)
+
+ <State 22>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [145]  (6 ns)
+
+ <State 23>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [145]  (6 ns)
+
+ <State 24>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [145]  (6 ns)
+
+ <State 25>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [145]  (6 ns)
+
+ <State 26>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [145]  (6 ns)
+
+ <State 27>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [145]  (6 ns)
+
+ <State 28>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [145]  (6 ns)
+
+ <State 29>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add', mlp_sigmoid.cpp:528) [146]  (6.02 ns)
+
+ <State 30>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add', mlp_sigmoid.cpp:528) [146]  (6.02 ns)
+
+ <State 31>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add', mlp_sigmoid.cpp:528) [146]  (6.02 ns)
+
+ <State 32>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add', mlp_sigmoid.cpp:528) [146]  (6.02 ns)
+
+ <State 33>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add', mlp_sigmoid.cpp:528) [146]  (6.02 ns)
+
+ <State 34>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div', mlp_sigmoid.cpp:528) [147]  (6.71 ns)
+
+ <State 35>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div', mlp_sigmoid.cpp:528) [147]  (6.71 ns)
+
+ <State 36>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div', mlp_sigmoid.cpp:528) [147]  (6.71 ns)
+
+ <State 37>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div', mlp_sigmoid.cpp:528) [147]  (6.71 ns)
+
+ <State 38>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div', mlp_sigmoid.cpp:528) [147]  (6.71 ns)
+
+ <State 39>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div', mlp_sigmoid.cpp:528) [147]  (6.71 ns)
+
+ <State 40>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div', mlp_sigmoid.cpp:528) [147]  (6.71 ns)
+
+ <State 41>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div', mlp_sigmoid.cpp:528) [147]  (6.71 ns)
+
+ <State 42>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div', mlp_sigmoid.cpp:528) [147]  (6.71 ns)
+
+ <State 43>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div', mlp_sigmoid.cpp:528) [147]  (6.71 ns)
+
+ <State 44>: 1.35ns
+The critical path consists of the following:
+	'getelementptr' operation ('Layer1_out_addr_2', mlp_sigmoid.cpp:528) [149]  (0 ns)
+	'store' operation ('store_ln528', mlp_sigmoid.cpp:528) of variable 'div', mlp_sigmoid.cpp:528 on array 'Layer1_out', mlp_sigmoid.cpp:494 [150]  (1.35 ns)
+
+ <State 45>: 2.21ns
+The critical path consists of the following:
+	'getelementptr' operation ('Layer2_out_addr_1', mlp_sigmoid.cpp:547) [197]  (0 ns)
+	'store' operation ('store_ln547', mlp_sigmoid.cpp:547) of constant 1 on array 'Layer2_out', mlp_sigmoid.cpp:495 [198]  (1.35 ns)
+	blocking operation 0.856 ns on control path)
+
+ <State 46>: 2.37ns
+The critical path consists of the following:
+	'phi' operation ('j', mlp_sigmoid.cpp:541) with incoming values : ('add_ln541', mlp_sigmoid.cpp:541) [167]  (0 ns)
+	'add' operation ('add_ln542', mlp_sigmoid.cpp:542) [177]  (1.02 ns)
+	'getelementptr' operation ('Layer1ToLayer2Weights_addr', mlp_sigmoid.cpp:542) [179]  (0 ns)
+	'load' operation ('Layer1ToLayer2Weights_load', mlp_sigmoid.cpp:542) on array 'Layer1ToLayer2Weights' [181]  (1.35 ns)
+
+ <State 47>: 6.02ns
+The critical path consists of the following:
+	'load' operation ('Layer1ToLayer2Weights_load', mlp_sigmoid.cpp:542) on array 'Layer1ToLayer2Weights' [181]  (1.35 ns)
+	'fmul' operation ('mul1', mlp_sigmoid.cpp:542) [184]  (4.67 ns)
+
+ <State 48>: 4.67ns
+The critical path consists of the following:
+	'fmul' operation ('mul1', mlp_sigmoid.cpp:542) [184]  (4.67 ns)
+
+ <State 49>: 4.67ns
+The critical path consists of the following:
+	'fmul' operation ('mul1', mlp_sigmoid.cpp:542) [184]  (4.67 ns)
+
+ <State 50>: 4.67ns
+The critical path consists of the following:
+	'fmul' operation ('mul1', mlp_sigmoid.cpp:542) [184]  (4.67 ns)
+
+ <State 51>: 6.34ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln542', mlp_sigmoid.cpp:542) [185]  (0.857 ns)
+	'facc' operation ('sum', mlp_sigmoid.cpp:542) [186]  (5.48 ns)
+
+ <State 52>: 5.48ns
+The critical path consists of the following:
+	'facc' operation ('sum', mlp_sigmoid.cpp:542) [186]  (5.48 ns)
+
+ <State 53>: 5.48ns
+The critical path consists of the following:
+	'facc' operation ('sum', mlp_sigmoid.cpp:542) [186]  (5.48 ns)
+
+ <State 54>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_1', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [189]  (6 ns)
+
+ <State 55>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_1', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [189]  (6 ns)
+
+ <State 56>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_1', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [189]  (6 ns)
+
+ <State 57>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_1', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [189]  (6 ns)
+
+ <State 58>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_1', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [189]  (6 ns)
+
+ <State 59>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_1', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [189]  (6 ns)
+
+ <State 60>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_1', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [189]  (6 ns)
+
+ <State 61>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_1', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [189]  (6 ns)
+
+ <State 62>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mlp_sigmoid.cpp:545) [190]  (6.02 ns)
+
+ <State 63>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mlp_sigmoid.cpp:545) [190]  (6.02 ns)
+
+ <State 64>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mlp_sigmoid.cpp:545) [190]  (6.02 ns)
+
+ <State 65>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mlp_sigmoid.cpp:545) [190]  (6.02 ns)
+
+ <State 66>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add1', mlp_sigmoid.cpp:545) [190]  (6.02 ns)
+
+ <State 67>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div1', mlp_sigmoid.cpp:545) [191]  (6.71 ns)
+
+ <State 68>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div1', mlp_sigmoid.cpp:545) [191]  (6.71 ns)
+
+ <State 69>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div1', mlp_sigmoid.cpp:545) [191]  (6.71 ns)
+
+ <State 70>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div1', mlp_sigmoid.cpp:545) [191]  (6.71 ns)
+
+ <State 71>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div1', mlp_sigmoid.cpp:545) [191]  (6.71 ns)
+
+ <State 72>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div1', mlp_sigmoid.cpp:545) [191]  (6.71 ns)
+
+ <State 73>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div1', mlp_sigmoid.cpp:545) [191]  (6.71 ns)
+
+ <State 74>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div1', mlp_sigmoid.cpp:545) [191]  (6.71 ns)
+
+ <State 75>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div1', mlp_sigmoid.cpp:545) [191]  (6.71 ns)
+
+ <State 76>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div1', mlp_sigmoid.cpp:545) [191]  (6.71 ns)
+
+ <State 77>: 1.35ns
+The critical path consists of the following:
+	'getelementptr' operation ('Layer2_out_addr_2', mlp_sigmoid.cpp:545) [193]  (0 ns)
+	'store' operation ('store_ln545', mlp_sigmoid.cpp:545) of variable 'div1', mlp_sigmoid.cpp:545 on array 'Layer2_out', mlp_sigmoid.cpp:495 [194]  (1.35 ns)
+
+ <State 78>: 0.884ns
+The critical path consists of the following:
+	'phi' operation ('i', mlp_sigmoid.cpp:553) with incoming values : ('add_ln553', mlp_sigmoid.cpp:553) [201]  (0 ns)
+	'icmp' operation ('icmp_ln553', mlp_sigmoid.cpp:553) [203]  (0.884 ns)
+
+ <State 79>: 2.43ns
+The critical path consists of the following:
+	'phi' operation ('j', mlp_sigmoid.cpp:557) with incoming values : ('add_ln557', mlp_sigmoid.cpp:557) [212]  (0 ns)
+	'add' operation ('add_ln559', mlp_sigmoid.cpp:559) [223]  (0 ns)
+	'add' operation ('add_ln559_1', mlp_sigmoid.cpp:559) [224]  (1.07 ns)
+	'getelementptr' operation ('Layer2ToOutputWeights_addr', mlp_sigmoid.cpp:559) [226]  (0 ns)
+	'load' operation ('Layer2ToOutputWeights_load', mlp_sigmoid.cpp:559) on array 'Layer2ToOutputWeights' [228]  (1.35 ns)
+
+ <State 80>: 6.02ns
+The critical path consists of the following:
+	'load' operation ('Layer2ToOutputWeights_load', mlp_sigmoid.cpp:559) on array 'Layer2ToOutputWeights' [228]  (1.35 ns)
+	'fmul' operation ('mul2', mlp_sigmoid.cpp:559) [231]  (4.67 ns)
+
+ <State 81>: 4.67ns
+The critical path consists of the following:
+	'fmul' operation ('mul2', mlp_sigmoid.cpp:559) [231]  (4.67 ns)
+
+ <State 82>: 4.67ns
+The critical path consists of the following:
+	'fmul' operation ('mul2', mlp_sigmoid.cpp:559) [231]  (4.67 ns)
+
+ <State 83>: 4.67ns
+The critical path consists of the following:
+	'fmul' operation ('mul2', mlp_sigmoid.cpp:559) [231]  (4.67 ns)
+
+ <State 84>: 6.34ns
+The critical path consists of the following:
+	'icmp' operation ('icmp_ln559', mlp_sigmoid.cpp:559) [232]  (0.856 ns)
+	'facc' operation ('sum', mlp_sigmoid.cpp:559) [233]  (5.48 ns)
+
+ <State 85>: 5.48ns
+The critical path consists of the following:
+	'facc' operation ('sum', mlp_sigmoid.cpp:559) [233]  (5.48 ns)
+
+ <State 86>: 5.48ns
+The critical path consists of the following:
+	'facc' operation ('sum', mlp_sigmoid.cpp:559) [233]  (5.48 ns)
+
+ <State 87>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [236]  (6 ns)
+
+ <State 88>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [236]  (6 ns)
+
+ <State 89>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [236]  (6 ns)
+
+ <State 90>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [236]  (6 ns)
+
+ <State 91>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [236]  (6 ns)
+
+ <State 92>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [236]  (6 ns)
+
+ <State 93>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [236]  (6 ns)
+
+ <State 94>: 6ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/cmath:246) [236]  (6 ns)
+
+ <State 95>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mlp_sigmoid.cpp:562) [237]  (6.02 ns)
+
+ <State 96>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mlp_sigmoid.cpp:562) [237]  (6.02 ns)
+
+ <State 97>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mlp_sigmoid.cpp:562) [237]  (6.02 ns)
+
+ <State 98>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mlp_sigmoid.cpp:562) [237]  (6.02 ns)
+
+ <State 99>: 6.02ns
+The critical path consists of the following:
+	'fadd' operation ('add2', mlp_sigmoid.cpp:562) [237]  (6.02 ns)
+
+ <State 100>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div2', mlp_sigmoid.cpp:562) [238]  (6.71 ns)
+
+ <State 101>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div2', mlp_sigmoid.cpp:562) [238]  (6.71 ns)
+
+ <State 102>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div2', mlp_sigmoid.cpp:562) [238]  (6.71 ns)
+
+ <State 103>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div2', mlp_sigmoid.cpp:562) [238]  (6.71 ns)
+
+ <State 104>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div2', mlp_sigmoid.cpp:562) [238]  (6.71 ns)
+
+ <State 105>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div2', mlp_sigmoid.cpp:562) [238]  (6.71 ns)
+
+ <State 106>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div2', mlp_sigmoid.cpp:562) [238]  (6.71 ns)
+
+ <State 107>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div2', mlp_sigmoid.cpp:562) [238]  (6.71 ns)
+
+ <State 108>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div2', mlp_sigmoid.cpp:562) [238]  (6.71 ns)
+
+ <State 109>: 6.71ns
+The critical path consists of the following:
+	'fdiv' operation ('div2', mlp_sigmoid.cpp:562) [238]  (6.71 ns)
+
+ <State 110>: 0.79ns
+The critical path consists of the following:
+	'getelementptr' operation ('Out_layer_addr_2', mlp_sigmoid.cpp:562) [239]  (0 ns)
+	'store' operation ('store_ln562', mlp_sigmoid.cpp:562) of variable 'div2', mlp_sigmoid.cpp:562 on array 'Out_layer', mlp_sigmoid.cpp:496 [240]  (0.79 ns)
+
+ <State 111>: 0.884ns
+The critical path consists of the following:
+	'phi' operation ('i', mlp_sigmoid.cpp:565) with incoming values : ('add_ln565', mlp_sigmoid.cpp:565) [245]  (0 ns)
+	'icmp' operation ('icmp_ln565', mlp_sigmoid.cpp:565) [248]  (0.884 ns)
+
+ <State 112>: 0.79ns
+The critical path consists of the following:
+	'load' operation ('out_converter', mlp_sigmoid.cpp:567) on array 'Out_layer', mlp_sigmoid.cpp:496 [255]  (0.79 ns)
+
+ <State 113>: 0ns
+The critical path consists of the following:
+
+ <State 114>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

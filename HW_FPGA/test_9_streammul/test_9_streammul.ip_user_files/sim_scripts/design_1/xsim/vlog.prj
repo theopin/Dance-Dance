@@ -1,0 +1,48 @@
+verilog xil_defaultlib --include "/tools/Xilinx/Vivado/2020.2/data/xilinx_vip/include" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/da1e/hdl" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/25b7/hdl/verilog" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/896c/hdl/verilog" \
+"../../../bd/design_1/ip/design_1_zynq_ultra_ps_e_0_2/sim/design_1_zynq_ultra_ps_e_0_2_vip_wrapper.v" \
+"../../../bd/design_1/ip/design_1_xbar_0/sim/design_1_xbar_0.v" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/sim/bd_69c2.v" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_0/sim/bd_69c2_one_0.v" \
+
+sv xil_defaultlib --include "/tools/Xilinx/Vivado/2020.2/data/xilinx_vip/include" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/da1e/hdl" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/25b7/hdl/verilog" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/896c/hdl/verilog" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_2/sim/bd_69c2_s00mmu_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_3/sim/bd_69c2_s00tr_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_4/sim/bd_69c2_s00sic_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_5/sim/bd_69c2_s00a2s_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_6/sim/bd_69c2_sarn_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_7/sim/bd_69c2_srn_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_8/sim/bd_69c2_sawn_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_9/sim/bd_69c2_swn_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_10/sim/bd_69c2_sbn_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_11/sim/bd_69c2_m00s2a_0.sv" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/bd_0/ip/ip_12/sim/bd_69c2_m00e_0.sv" \
+
+verilog xil_defaultlib --include "/tools/Xilinx/Vivado/2020.2/data/xilinx_vip/include" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/da1e/hdl" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/25b7/hdl/verilog" --include "../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/896c/hdl/verilog" \
+"../../../bd/design_1/ip/design_1_axi_smc_8/sim/design_1_axi_smc_8.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_facc_32ns_32ns_1ns_32_3_no_dsp_1.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fadd_32ns_32ns_32_5_full_dsp_1.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fdiv_32ns_32ns_32_10_no_dsp_1.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fexp_32ns_32ns_32_8_full_dsp_1.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_fmul_32ns_32ns_32_4_max_dsp_1.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_incoming_inputs.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_InputToLayer1Weights.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1_out.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer1ToLayer2Weights.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2_out.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Layer2ToOutputWeights.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_Out_layer.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid_regslice_both.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/verilog/mlp_sigmoid.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fexp_6_full_dsp_32.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fdiv_8_no_dsp_32.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fmul_2_max_dsp_32.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/FAcc.v" \
+"../../../../test_9_streammul.gen/sources_1/bd/design_1/ipshared/2e36/hdl/ip/mlp_sigmoid_ap_fadd_3_full_dsp_32.v" \
+"../../../bd/design_1/ip/design_1_mlp_sigmoid_0_0/sim/design_1_mlp_sigmoid_0_0.v" \
+"../../../bd/design_1/ip/design_1_auto_us_0/sim/design_1_auto_us_0.v" \
+"../../../bd/design_1/ip/design_1_auto_us_1/sim/design_1_auto_us_1.v" \
+"../../../bd/design_1/sim/design_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
