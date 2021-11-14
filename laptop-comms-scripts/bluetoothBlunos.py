@@ -332,7 +332,7 @@ def signal_beetle_disconnection(beetle_index, isEmg=False):
 	laptop_client.outwardToUltraQueue.put("BDC" + beetle_index)
 
 
-# Prepares beetle sensor data string to be sent directly to dashboard
+# Prepares beetle sensor data string to be sent directly to dashboard/U96
 # Data is sent 3 at a time - Roll-Pitch-Yaw, AccX-AccY-Acc-Z, GyoX-GyoY-Gyo-Z
 # Message Format: S|beetle_index|value1name+value1|value2name+value2|value3name+value3
 # Sample Message: S|0|gx0.1|gy0.1|gz0.1
@@ -350,7 +350,7 @@ def process_bluno_sensor_data(beetle_index, data_class, dataset_1, dataset_2, da
 	
 	laptop_client.outwardToUltraQueue.put(formatted_string)
 
-# Prepares EMG data string to be sent directly to dashboard/U96
+# Prepares EMG data string to be sent directly to dashboard
 # Message Format: DS|beetle_index|valuename+value
 # Sample Message: DS|0|rms0.5
 def process_emg_data(beetle_index, data_class, dataset):
