@@ -350,7 +350,7 @@ def process_bluno_sensor_data(beetle_index, data_class, dataset_1, dataset_2, da
 	
 	laptop_client.outwardToUltraQueue.put(formatted_string)
 
-# Prepares EMG data string to be sent directly to dashboard 
+# Prepares EMG data string to be sent directly to dashboard/U96
 # Message Format: DS|beetle_index|valuename+value
 # Sample Message: DS|0|rms0.5
 def process_emg_data(beetle_index, data_class, dataset):
